@@ -82,7 +82,7 @@ Partial Class Login_Form
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(53, 20)
         Me.Label3.TabIndex = 5
-        Me.Label3.Text = "Label3"
+        Me.Label3.Text = "Label4"
         '
         'Login_Form
         '
