@@ -1,0 +1,31 @@
+C:\Users\joaomorgado\Desktop\VS Minas App\Minas 2\bin\Debug\net6.0-windows\Minas 2.exe
+C:\Users\joaomorgado\Desktop\VS Minas App\Minas 2\bin\Debug\net6.0-windows\Minas 2.deps.json
+C:\Users\joaomorgado\Desktop\VS Minas App\Minas 2\bin\Debug\net6.0-windows\Minas 2.runtimeconfig.json
+C:\Users\joaomorgado\Desktop\VS Minas App\Minas 2\bin\Debug\net6.0-windows\Minas 2.dll
+C:\Users\joaomorgado\Desktop\VS Minas App\Minas 2\bin\Debug\net6.0-windows\Minas 2.pdb
+C:\Users\joaomorgado\Desktop\VS Minas App\Minas 2\bin\Debug\net6.0-windows\Google.Protobuf.dll
+C:\Users\joaomorgado\Desktop\VS Minas App\Minas 2\bin\Debug\net6.0-windows\K4os.Compression.LZ4.dll
+C:\Users\joaomorgado\Desktop\VS Minas App\Minas 2\bin\Debug\net6.0-windows\K4os.Compression.LZ4.Streams.dll
+C:\Users\joaomorgado\Desktop\VS Minas App\Minas 2\bin\Debug\net6.0-windows\K4os.Hash.xxHash.dll
+C:\Users\joaomorgado\Desktop\VS Minas App\Minas 2\bin\Debug\net6.0-windows\MySql.Data.dll
+C:\Users\joaomorgado\Desktop\VS Minas App\Minas 2\bin\Debug\net6.0-windows\BouncyCastle.Crypto.dll
+C:\Users\joaomorgado\Desktop\VS Minas App\Minas 2\bin\Debug\net6.0-windows\runtimes\win-x64\native\comerr64.dll
+C:\Users\joaomorgado\Desktop\VS Minas App\Minas 2\bin\Debug\net6.0-windows\runtimes\win-x64\native\gssapi64.dll
+C:\Users\joaomorgado\Desktop\VS Minas App\Minas 2\bin\Debug\net6.0-windows\runtimes\win-x64\native\k5sprt64.dll
+C:\Users\joaomorgado\Desktop\VS Minas App\Minas 2\bin\Debug\net6.0-windows\runtimes\win-x64\native\krb5_64.dll
+C:\Users\joaomorgado\Desktop\VS Minas App\Minas 2\bin\Debug\net6.0-windows\runtimes\win-x64\native\krbcc64.dll
+C:\Users\joaomorgado\Desktop\VS Minas App\Minas 2\obj\Debug\net6.0-windows\Minas 2.vbproj.AssemblyReference.cache
+C:\Users\joaomorgado\Desktop\VS Minas App\Minas 2\obj\Debug\net6.0-windows\Minas_2.Gestão_Stock.resources
+C:\Users\joaomorgado\Desktop\VS Minas App\Minas 2\obj\Debug\net6.0-windows\Minas_2.Login_Form.resources
+C:\Users\joaomorgado\Desktop\VS Minas App\Minas 2\obj\Debug\net6.0-windows\Minas_2.Form1.resources
+C:\Users\joaomorgado\Desktop\VS Minas App\Minas 2\obj\Debug\net6.0-windows\Minas 2.vbproj.GenerateResource.cache
+C:\Users\joaomorgado\Desktop\VS Minas App\Minas 2\obj\Debug\net6.0-windows\Minas 2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\joaomorgado\Desktop\VS Minas App\Minas 2\obj\Debug\net6.0-windows\Minas 2.AssemblyInfoInputs.cache
+C:\Users\joaomorgado\Desktop\VS Minas App\Minas 2\obj\Debug\net6.0-windows\Minas 2.AssemblyInfo.vb
+C:\Users\joaomorgado\Desktop\VS Minas App\Minas 2\obj\Debug\net6.0-windows\Minas 2.vbproj.CoreCompileInputs.cache
+C:\Users\joaomorgado\Desktop\VS Minas App\Minas 2\obj\Debug\net6.0-windows\Minas 2.vbproj.CopyComplete
+C:\Users\joaomorgado\Desktop\VS Minas App\Minas 2\obj\Debug\net6.0-windows\Minas 2.dll
+C:\Users\joaomorgado\Desktop\VS Minas App\Minas 2\obj\Debug\net6.0-windows\refint\Minas 2.dll
+C:\Users\joaomorgado\Desktop\VS Minas App\Minas 2\obj\Debug\net6.0-windows\Minas 2.pdb
+C:\Users\joaomorgado\Desktop\VS Minas App\Minas 2\obj\Debug\net6.0-windows\Minas 2.genruntimeconfig.cache
+C:\Users\joaomorgado\Desktop\VS Minas App\Minas 2\obj\Debug\net6.0-windows\ref\Minas 2.dll
