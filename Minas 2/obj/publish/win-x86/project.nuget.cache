@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "i62dK9/R8w2gPO0ouif+mKEk8+hDYslMHbNURv/DxiC/z4B9rryPIMVCCjcvMCFFlQZqVzD60Ku1SIXHb7jwgg==",
+  "dgSpecHash": "jCtdRn8Qp42FEvowdJ+RRTSbglxnggHdzuD5LxliakRKuhz4hgQQnSOv83dcZijIbybX0z2RVktt9SGlCh8OPw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\joaomorgado\\Desktop\\VS Minas App\\Minas 2\\Minas 2.vbproj",
+  "projectFilePath": "C:\\Users\\joaomorgado\\Desktop\\Repositório\\atualizador\\Minas 2\\Minas 2.vbproj",
   "expectedPackageFiles": [
     "C:\\Users\\joaomorgado\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",
     "C:\\Users\\joaomorgado\\.nuget\\packages\\k4os.compression.lz4\\1.2.6\\k4os.compression.lz4.1.2.6.nupkg.sha512",
@@ -40,8 +40,7 @@
     "C:\\Users\\joaomorgado\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512",
     "C:\\Users\\joaomorgado\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\6.0.14\\microsoft.netcore.app.runtime.win-x86.6.0.14.nupkg.sha512",
     "C:\\Users\\joaomorgado\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\6.0.14\\microsoft.windowsdesktop.app.runtime.win-x86.6.0.14.nupkg.sha512",
-    "C:\\Users\\joaomorgado\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\6.0.14\\microsoft.aspnetcore.app.runtime.win-x86.6.0.14.nupkg.sha512",
-    "C:\\Users\\joaomorgado\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-arm64\\6.0.14\\microsoft.netcore.app.crossgen2.win-arm64.6.0.14.nupkg.sha512"
+    "C:\\Users\\joaomorgado\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\6.0.14\\microsoft.aspnetcore.app.runtime.win-x86.6.0.14.nupkg.sha512"
   ],
   "logs": []
 }

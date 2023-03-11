@@ -2146,11 +2146,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\joaomorgado\\Desktop\\VS Minas App\\Minas 2\\Minas 2.vbproj",
+      "projectUniqueName": "C:\\Users\\joaomorgado\\Desktop\\Repositório\\atualizador\\Minas 2\\Minas 2.vbproj",
       "projectName": "Minas 2",
-      "projectPath": "C:\\Users\\joaomorgado\\Desktop\\VS Minas App\\Minas 2\\Minas 2.vbproj",
+      "projectPath": "C:\\Users\\joaomorgado\\Desktop\\Repositório\\atualizador\\Minas 2\\Minas 2.vbproj",
       "packagesPath": "C:\\Users\\joaomorgado\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\joaomorgado\\Desktop\\VS Minas App\\Minas 2\\obj\\publish\\win-x86\\",
+      "outputPath": "C:\\Users\\joaomorgado\\Desktop\\Repositório\\atualizador\\Minas 2\\obj\\publish\\win-x86\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2202,10 +2202,6 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.AspNetCore.App.Runtime.win-x86",
-            "version": "[6.0.14, 6.0.14]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Crossgen2.win-arm64",
             "version": "[6.0.14, 6.0.14]"
           },
           {
