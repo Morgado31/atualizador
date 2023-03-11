@@ -1516,9 +1516,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\joaomorgado\\Desktop\\Repositório\\atualizador\\Minas 2\\Minas 2.vbproj",
-      "projectName": "Minas 2",
-      "projectPath": "C:\\Users\\joaomorgado\\Desktop\\Repositório\\atualizador\\Minas 2\\Minas 2.vbproj",
+      "projectUniqueName": "C:\\Users\\joaomorgado\\Desktop\\Repositório\\atualizador\\Minas 2\\Minas2.vbproj",
+      "projectName": "Minas2",
+      "projectPath": "C:\\Users\\joaomorgado\\Desktop\\Repositório\\atualizador\\Minas 2\\Minas2.vbproj",
       "packagesPath": "C:\\Users\\joaomorgado\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\joaomorgado\\Desktop\\Repositório\\atualizador\\Minas 2\\obj\\",
       "projectStyle": "PackageReference",

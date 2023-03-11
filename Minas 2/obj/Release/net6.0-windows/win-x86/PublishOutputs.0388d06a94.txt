@@ -1,8 +1,8 @@
-C:\Users\joaomorgado\Desktop\Repositório\atualizador\Minas 2\bin\Release\net6.0-windows\win-x86\app.publish\Minas 2.exe
-C:\Users\joaomorgado\Desktop\Repositório\atualizador\Minas 2\bin\Release\net6.0-windows\win-x86\app.publish\Minas 2.dll
-C:\Users\joaomorgado\Desktop\Repositório\atualizador\Minas 2\bin\Release\net6.0-windows\win-x86\app.publish\Minas 2.deps.json
-C:\Users\joaomorgado\Desktop\Repositório\atualizador\Minas 2\bin\Release\net6.0-windows\win-x86\app.publish\Minas 2.runtimeconfig.json
-C:\Users\joaomorgado\Desktop\Repositório\atualizador\Minas 2\bin\Release\net6.0-windows\win-x86\app.publish\Minas 2.pdb
+C:\Users\joaomorgado\Desktop\Repositório\atualizador\Minas 2\bin\Release\net6.0-windows\win-x86\app.publish\Minas2.exe
+C:\Users\joaomorgado\Desktop\Repositório\atualizador\Minas 2\bin\Release\net6.0-windows\win-x86\app.publish\Minas2.dll
+C:\Users\joaomorgado\Desktop\Repositório\atualizador\Minas 2\bin\Release\net6.0-windows\win-x86\app.publish\Minas2.deps.json
+C:\Users\joaomorgado\Desktop\Repositório\atualizador\Minas 2\bin\Release\net6.0-windows\win-x86\app.publish\Minas2.runtimeconfig.json
+C:\Users\joaomorgado\Desktop\Repositório\atualizador\Minas 2\bin\Release\net6.0-windows\win-x86\app.publish\Minas2.pdb
 C:\Users\joaomorgado\Desktop\Repositório\atualizador\Minas 2\bin\Release\net6.0-windows\win-x86\app.publish\Microsoft.CSharp.dll
 C:\Users\joaomorgado\Desktop\Repositório\atualizador\Minas 2\bin\Release\net6.0-windows\win-x86\app.publish\Microsoft.VisualBasic.Core.dll
 C:\Users\joaomorgado\Desktop\Repositório\atualizador\Minas 2\bin\Release\net6.0-windows\win-x86\app.publish\Microsoft.Win32.Primitives.dll
