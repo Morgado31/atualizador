@@ -105,7 +105,7 @@ Public Class Form1
 
         'Calculo dos materiais 
 
-        outputFerro = inputPedra / 3.12
+        outputFerro = inputPedra '/ 3.12
         outputCobre = inputPedra / 5.72
         outputPrata = inputPedra / 8.3
         outputVidro = inputAreia / 3.2
