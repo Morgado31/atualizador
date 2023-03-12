@@ -21,7 +21,7 @@ Public Class Login_Form
                 If reader.HasRows Then
                     reader.Close()
                     connection.Close()
-                    Form1.Show()
+                    Processo_Legal.Show()
                 Else
                     MessageBox.Show("Algo está errado")
                     Exit Try

@@ -57,18 +57,24 @@ Public Class Gestão_Stock
 
     End Sub
 
-    Private Sub seletorStockMenu_SelectedIndexChanged(sender As Object, e As EventArgs) Handles seletorStockMenu.SelectedIndexChanged
+    Private Sub seletorStockMenu_SelectedIndexChanged(sender As Object, e As EventArgs) Handles seletorMenu.SelectedIndexChanged
 
         'Transição entre menus
 
-        Dim selectedMenu As String = seletorStockMenu.SelectedItem.ToString()
+        Dim selectedMenu As String = seletorMenu.SelectedItem.ToString()
 
         Select Case selectedMenu
 
             Case "Calculadora Mina Legal"
-                Dim formA As New Form1()
+                Dim formA As New Processo_Legal()
                 formA.Show()
                 Me.Hide()
+
+            Case "Craft Polvora"
+                Dim formB As New Processo_Polvora()
+                formB.Show()
+                Me.Hide()
+
         End Select
 
     End Sub

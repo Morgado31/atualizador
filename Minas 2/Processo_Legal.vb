@@ -1,8 +1,9 @@
 ﻿
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Imports MySql.Data.MySqlClient
 
 
-Public Class Form1
+Public Class Processo_Legal
 
     'Definição das variaveis para todos os Private Subs
 
@@ -97,9 +98,9 @@ Public Class Form1
 
         If IsNumeric(inputAreia) = False Or IsNumeric(inputPedra) = False Or IsNumeric(inputMinério) = False Then
             MessageBox.Show("Introduzir só números")
-            txtPedra.Text = 0
-            txtAreia.Text = 0
-            txtMinério.Text = 0
+            txtPedra.Text = ""
+            txtAreia.Text = ""
+            txtMinério.Text = ""
             Exit Sub
         End If
 
@@ -218,9 +219,7 @@ Public Class Form1
 
         Dim result As DialogResult = MessageBox.Show("Confirmas que está tudo correto e entregas-te os materiais?" & vbCrLf & "Olha que o Scorpion vai atrás de ti!", "Confirmação", MessageBoxButtons.OKCancel)
 
-        If result = DialogResult.OK Then
-            MessageBox.Show("Operação Registada")
-        Else
+        If result <> DialogResult.OK Then
             Exit Sub
         End If
 
@@ -318,7 +317,13 @@ Public Class Form1
         checkFerro.Checked = False
         checkPrata.Checked = False
         checkVidro.Checked = False
-        btnProcessar.PerformClick()
+        txtCobre.Text = ""
+        txtDinheiro.Text = ""
+        txtEnxofre.Text = ""
+        txtFerro.Text = ""
+        txtNíquel.Text = ""
+        txtPrata.Text = ""
+        txtVidro.Text = ""
         SeletorEquipas.SelectedIndex = -1
         txtAvisoValor.Text = ""
 
@@ -336,6 +341,12 @@ Public Class Form1
                 Dim formA As New Gestão_Stock()
                 formA.Show()
                 Me.Hide()
+
+            Case "Craft Polvora"
+                Dim formB As New Processo_Polvora()
+                formB.Show()
+                Me.Hide()
+
         End Select
 
     End Sub

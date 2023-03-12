@@ -27,7 +27,7 @@ Partial Class Gestão_Stock
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.seletorStockEquipa = New System.Windows.Forms.ComboBox()
-        Me.seletorStockMenu = New System.Windows.Forms.ComboBox()
+        Me.seletorMenu = New System.Windows.Forms.ComboBox()
         Me.txtStockVidro = New System.Windows.Forms.TextBox()
         Me.txtStockCobre = New System.Windows.Forms.TextBox()
         Me.txtStockPrata = New System.Windows.Forms.TextBox()
@@ -90,15 +90,15 @@ Partial Class Gestão_Stock
         Me.seletorStockEquipa.Size = New System.Drawing.Size(151, 28)
         Me.seletorStockEquipa.TabIndex = 31
         '
-        'seletorStockMenu
+        'seletorMenu
         '
-        Me.seletorStockMenu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.seletorStockMenu.FormattingEnabled = True
-        Me.seletorStockMenu.Items.AddRange(New Object() {"Calculadora Mina Legal"})
-        Me.seletorStockMenu.Location = New System.Drawing.Point(103, 39)
-        Me.seletorStockMenu.Name = "seletorStockMenu"
-        Me.seletorStockMenu.Size = New System.Drawing.Size(229, 28)
-        Me.seletorStockMenu.TabIndex = 30
+        Me.seletorMenu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.seletorMenu.FormattingEnabled = True
+        Me.seletorMenu.Items.AddRange(New Object() {"Calculadora Mina Legal", "Craft Polvora"})
+        Me.seletorMenu.Location = New System.Drawing.Point(103, 39)
+        Me.seletorMenu.Name = "seletorMenu"
+        Me.seletorMenu.Size = New System.Drawing.Size(229, 28)
+        Me.seletorMenu.TabIndex = 30
         '
         'txtStockVidro
         '
@@ -335,7 +335,7 @@ Partial Class Gestão_Stock
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.seletorStockEquipa)
-        Me.Controls.Add(Me.seletorStockMenu)
+        Me.Controls.Add(Me.seletorMenu)
         Me.Controls.Add(Me.txtStockVidro)
         Me.Controls.Add(Me.txtStockCobre)
         Me.Controls.Add(Me.txtStockPrata)
@@ -363,7 +363,7 @@ Partial Class Gestão_Stock
     Friend WithEvents Label8 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents seletorStockEquipa As ComboBox
-    Friend WithEvents seletorStockMenu As ComboBox
+    Friend WithEvents seletorMenu As ComboBox
     Friend WithEvents txtStockVidro As TextBox
     Friend WithEvents txtStockCobre As TextBox
     Friend WithEvents txtStockPrata As TextBox
