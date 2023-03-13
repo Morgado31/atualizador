@@ -133,9 +133,9 @@ Public Class Gestão_Stock
             Dim queryPrata As String = "SELECT SUM(prata) FROM Stocks WHERE Equipa = @value1"
             Dim queryCobre As String = "SELECT SUM(cobre) FROM Stocks WHERE Equipa = @value1"
             Dim queryVidro As String = "SELECT SUM(vidro) FROM Stocks WHERE Equipa = @value1"
-            Dim queryPedra As String = "SELECT SUM(pedra) FROM `Processo Pedra e Areia` WHERE Equipa = @value1"
-            Dim queryAreia As String = "SELECT SUM(areia) FROM `Processo Pedra e Areia` WHERE Equipa = @value1"
-            Dim queryMinério As String = "SELECT SUM(minério) FROM `Processo Pedra e Areia` WHERE Equipa = @value1"
+            Dim queryPedra As String = "SELECT SUM(pedra) FROM `Venda de Materiais` WHERE Equipa = @value1"
+            Dim queryAreia As String = "SELECT SUM(areia) FROM `Venda de Materiais` WHERE Equipa = @value1"
+            Dim queryMinério As String = "SELECT SUM(minério) FROM `Venda de Materiais` WHERE Equipa = @value1"
 
             Using command As New MySqlCommand(queryFerro, connection)
                 command.Parameters.AddWithValue("@value1", equipa)
