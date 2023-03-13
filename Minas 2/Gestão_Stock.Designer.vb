@@ -94,7 +94,6 @@ Partial Class Gestão_Stock
         '
         Me.seletorMenu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.seletorMenu.FormattingEnabled = True
-        Me.seletorMenu.Items.AddRange(New Object() {"Calculadora Mina Legal", "Craft Polvora"})
         Me.seletorMenu.Location = New System.Drawing.Point(103, 39)
         Me.seletorMenu.Name = "seletorMenu"
         Me.seletorMenu.Size = New System.Drawing.Size(229, 28)
@@ -213,9 +212,9 @@ Partial Class Gestão_Stock
         Me.Label9.AutoSize = True
         Me.Label9.Location = New System.Drawing.Point(155, 16)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(125, 20)
+        Me.Label9.Size = New System.Drawing.Size(119, 20)
         Me.Label9.TabIndex = 36
-        Me.Label9.Text = "Selecionar Menus"
+        Me.Label9.Text = "Selecionar Menu"
         '
         'btnConsultar
         '
@@ -353,7 +352,7 @@ Partial Class Gestão_Stock
         Me.MaximizeBox = False
         Me.Name = "Gestão_Stock"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Minas 2"
+        Me.Text = "Minas 2 - Gestão de Stocks"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

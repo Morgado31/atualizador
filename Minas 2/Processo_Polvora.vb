@@ -55,6 +55,38 @@ Public Class Processo_Polvora
 
         End Using
 
+        'Introduzir menus no seletor de menus
+
+        Using Connection As New MySqlConnection(connString)
+            Connection.Open()
+            Try
+
+                Dim query As String = "SELECT Menus FROM Menus"
+                Dim command As New MySqlCommand(query, Connection)
+                Dim reader As MySqlDataReader = command.ExecuteReader()
+
+                While reader.Read()
+
+                    SeletorMenu.Items.Add(reader.GetString("Menus"))
+
+                End While
+
+                reader.Close()
+
+            Catch ex As Exception
+                MessageBox.Show("Error: " & ex.Message)
+
+            End Try
+
+        End Using
+
+        'Colocação em ordem alfabética
+
+        Dim itemsmenu As String() = SeletorMenu.Items.Cast(Of String)().ToArray()
+        Array.Sort(itemsmenu)
+        SeletorMenu.Items.Clear()
+        SeletorMenu.Items.AddRange(itemsmenu)
+
     End Sub
 
     Private Sub btnCraft_Click(sender As Object, e As EventArgs) Handles btnCraft.Click
@@ -101,14 +133,24 @@ Public Class Processo_Polvora
 
         Select Case selectedMenu
 
-            Case "Consultar Stocks"
+            Case "Gestão de Stocks"
                 Dim formA As New Gestão_Stock()
                 formA.Show()
                 Me.Hide()
 
-            Case "Calculadora Mina Legal"
-                Dim formB As New Processo_Legal()
+            Case "Craft de Polvora"
+                Dim formB As New Processo_Polvora()
                 formB.Show()
+                Me.Hide()
+
+            Case "Processo de Pedra"
+                Dim formC As New Processo_Pedra()
+                formC.Show()
+                Me.Hide()
+
+            Case "Venda de Materiais"
+                Dim formD As New Processo_Legal()
+                formD.Show()
                 Me.Hide()
 
         End Select

@@ -37,7 +37,6 @@ Partial Class Processo_Polvora
         'SeletorMenu
         '
         Me.SeletorMenu.FormattingEnabled = True
-        Me.SeletorMenu.Items.AddRange(New Object() {"Calculadora Mina Legal", "Consultar Stocks"})
         Me.SeletorMenu.Location = New System.Drawing.Point(109, 44)
         Me.SeletorMenu.Name = "SeletorMenu"
         Me.SeletorMenu.Size = New System.Drawing.Size(297, 28)
@@ -133,7 +132,7 @@ Partial Class Processo_Polvora
         Me.MaximizeBox = False
         Me.Name = "Processo_Polvora"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Minas2"
+        Me.Text = "Minas2 - Processo de Polvora"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

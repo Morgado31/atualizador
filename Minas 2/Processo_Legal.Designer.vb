@@ -44,7 +44,7 @@ Partial Class Processo_Legal
         Me.checkPrata = New System.Windows.Forms.CheckBox()
         Me.checkCobre = New System.Windows.Forms.CheckBox()
         Me.checkVidro = New System.Windows.Forms.CheckBox()
-        Me.seletorMenus = New System.Windows.Forms.ComboBox()
+        Me.seletorMenu = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txtNíquel = New System.Windows.Forms.TextBox()
         Me.txtEnxofre = New System.Windows.Forms.TextBox()
@@ -246,15 +246,14 @@ Partial Class Processo_Legal
         Me.checkVidro.Text = "Armazenar"
         Me.checkVidro.UseVisualStyleBackColor = True
         '
-        'seletorMenus
+        'seletorMenu
         '
-        Me.seletorMenus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.seletorMenus.FormattingEnabled = True
-        Me.seletorMenus.Items.AddRange(New Object() {"Consultar Stocks", "Craft Polvora"})
-        Me.seletorMenus.Location = New System.Drawing.Point(60, 32)
-        Me.seletorMenus.Name = "seletorMenus"
-        Me.seletorMenus.Size = New System.Drawing.Size(271, 28)
-        Me.seletorMenus.TabIndex = 23
+        Me.seletorMenu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.seletorMenu.FormattingEnabled = True
+        Me.seletorMenu.Location = New System.Drawing.Point(60, 32)
+        Me.seletorMenu.Name = "seletorMenu"
+        Me.seletorMenu.Size = New System.Drawing.Size(271, 28)
+        Me.seletorMenu.TabIndex = 23
         '
         'Label8
         '
@@ -321,7 +320,7 @@ Partial Class Processo_Legal
         Me.Controls.Add(Me.txtEnxofre)
         Me.Controls.Add(Me.txtNíquel)
         Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.seletorMenus)
+        Me.Controls.Add(Me.seletorMenu)
         Me.Controls.Add(Me.checkVidro)
         Me.Controls.Add(Me.checkCobre)
         Me.Controls.Add(Me.checkPrata)
@@ -348,7 +347,7 @@ Partial Class Processo_Legal
         Me.MaximizeBox = False
         Me.Name = "Processo_Legal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Minas 2"
+        Me.Text = "Minas 2 - Venda de Materiais"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -373,7 +372,7 @@ Partial Class Processo_Legal
     Friend WithEvents checkPrata As CheckBox
     Friend WithEvents checkCobre As CheckBox
     Friend WithEvents checkVidro As CheckBox
-    Friend WithEvents seletorMenus As ComboBox
+    Friend WithEvents seletorMenu As ComboBox
     Friend WithEvents Label8 As Label
     Public WithEvents SeletorEquipas As ComboBox
     Friend WithEvents txtNíquel As TextBox

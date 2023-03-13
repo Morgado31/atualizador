@@ -55,24 +55,66 @@ Public Class Gestão_Stock
 
         End Using
 
+        'Introduzir menus no seletor de menus
+
+        Using Connection As New MySqlConnection(connString)
+            Connection.Open()
+            Try
+
+                Dim query As String = "SELECT Menus FROM Menus"
+                Dim command As New MySqlCommand(query, Connection)
+                Dim reader As MySqlDataReader = command.ExecuteReader()
+
+                While reader.Read()
+
+                    seletorMenu.Items.Add(reader.GetString("Menus"))
+
+                End While
+
+                reader.Close()
+
+            Catch ex As Exception
+                MessageBox.Show("Error: " & ex.Message)
+
+            End Try
+
+        End Using
+
+        'Colocação em ordem alfabética
+
+        Dim itemsmenu As String() = seletorMenu.Items.Cast(Of String)().ToArray()
+        Array.Sort(itemsmenu)
+        seletorMenu.Items.Clear()
+        seletorMenu.Items.AddRange(itemsmenu)
+
     End Sub
 
     Private Sub seletorStockMenu_SelectedIndexChanged(sender As Object, e As EventArgs) Handles seletorMenu.SelectedIndexChanged
 
-        'Transição entre menus
+        ' Mudar menus
 
         Dim selectedMenu As String = seletorMenu.SelectedItem.ToString()
 
         Select Case selectedMenu
 
-            Case "Calculadora Mina Legal"
-                Dim formA As New Processo_Legal()
+            Case "Gestão de Stocks"
+                Dim formA As New Gestão_Stock()
                 formA.Show()
                 Me.Hide()
 
-            Case "Craft Polvora"
+            Case "Craft de Polvora"
                 Dim formB As New Processo_Polvora()
                 formB.Show()
+                Me.Hide()
+
+            Case "Processo de Pedra"
+                Dim formC As New Processo_Pedra()
+                formC.Show()
+                Me.Hide()
+
+            Case "Venda de Materiais"
+                Dim formD As New Processo_Legal()
+                formD.Show()
                 Me.Hide()
 
         End Select

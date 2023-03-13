@@ -9,7 +9,6 @@ Public Class Processo_Legal
 
     Private outputDinheiro, outputCobre, outputFerro, outputPrata, outputVidro, outputNíquel, outputEnxofre As Integer
     Private inputPedra, inputAreia, inputMinério As String
-    Public Property Equipas As New List(Of String)
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -64,6 +63,38 @@ Public Class Processo_Legal
             SeletorEquipas.Items.AddRange(items)
 
         End Using
+
+        'Introduzir menus no seletor de menus
+
+        Using Connection As New MySqlConnection(connString)
+            Connection.Open()
+            Try
+
+                Dim query As String = "SELECT Menus FROM Menus"
+                Dim command As New MySqlCommand(query, Connection)
+                Dim reader As MySqlDataReader = command.ExecuteReader()
+
+                While reader.Read()
+
+                    seletorMenu.Items.Add(reader.GetString("Menus"))
+
+                End While
+
+                reader.Close()
+
+            Catch ex As Exception
+                MessageBox.Show("Error: " & ex.Message)
+
+            End Try
+
+        End Using
+
+        'Colocação em ordem alfabética
+
+        Dim itemsmenu As String() = seletorMenu.Items.Cast(Of String)().ToArray()
+        Array.Sort(itemsmenu)
+        seletorMenu.Items.Clear()
+        seletorMenu.Items.AddRange(itemsmenu)
 
     End Sub
 
@@ -232,7 +263,7 @@ Public Class Processo_Legal
 
         'Conexão á database
 
-        Dim quary As String = "INSERT INTO `Processo Pedra e Areia` (`Pedra`, `Areia`, `Trabalhador`, `Equipa`, `Cliente`, `Ferro`, `Prata`, `Cobre`, `Vidro`, `Pagamento`, `Data`, `Minério`, `Níquel`, `Enxofre`) VALUES (@value1,@value2,@value3,@value4,@value5,@value6,@value7,@value8,@value9,@value10,@value11,@value12,@value13,@value14)"
+        Dim quary As String = "INSERT INTO `Venda de Materiais` (`Pedra`, `Areia`, `Trabalhador`, `Equipa`, `Cliente`, `Ferro`, `Prata`, `Cobre`, `Vidro`, `Pagamento`, `Data`, `Minério`, `Níquel`, `Enxofre`) VALUES (@value1,@value2,@value3,@value4,@value5,@value6,@value7,@value8,@value9,@value10,@value11,@value12,@value13,@value14)"
         Dim quaryStock As String = "INSERT INTO `Stocks` (`Equipa`, `Ferro`, `Prata`, `Cobre`, `Vidro`, `Cliente`, `Data`, `Trabalhador`) VALUES (@value1,@value2,@value3,@value4,@value5,@value6,@value7,@value8)"
 
         'Registo dos valores na tabela de Processo Legal
@@ -329,22 +360,32 @@ Public Class Processo_Legal
 
     End Sub
 
-    Private Sub seletorMenus_SelectedIndexChanged(sender As Object, e As EventArgs) Handles seletorMenus.SelectedIndexChanged
+    Private Sub seletorMenus_SelectedIndexChanged(sender As Object, e As EventArgs) Handles seletorMenu.SelectedIndexChanged
 
         ' Mudar menus
 
-        Dim selectedMenu As String = seletorMenus.SelectedItem.ToString()
+        Dim selectedMenu As String = seletorMenu.SelectedItem.ToString()
 
         Select Case selectedMenu
 
-            Case "Consultar Stocks"
+            Case "Gestão de Stocks"
                 Dim formA As New Gestão_Stock()
                 formA.Show()
                 Me.Hide()
 
-            Case "Craft Polvora"
+            Case "Craft de Polvora"
                 Dim formB As New Processo_Polvora()
                 formB.Show()
+                Me.Hide()
+
+            Case "Processo de Pedra"
+                Dim formC As New Processo_Pedra()
+                formC.Show()
+                Me.Hide()
+
+            Case "Venda de Materiais"
+                Dim formD As New Processo_Legal()
+                formD.Show()
                 Me.Hide()
 
         End Select
