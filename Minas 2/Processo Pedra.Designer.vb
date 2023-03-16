@@ -36,71 +36,79 @@ Partial Class Processo_Pedra
         '
         'txtPedra
         '
-        Me.txtPedra.Location = New System.Drawing.Point(120, 87)
+        Me.txtPedra.Location = New System.Drawing.Point(105, 65)
+        Me.txtPedra.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtPedra.Name = "txtPedra"
         Me.txtPedra.PlaceholderText = "Pedra"
-        Me.txtPedra.Size = New System.Drawing.Size(78, 27)
+        Me.txtPedra.Size = New System.Drawing.Size(69, 23)
         Me.txtPedra.TabIndex = 0
         Me.txtPedra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtAreia
         '
-        Me.txtAreia.Location = New System.Drawing.Point(216, 87)
+        Me.txtAreia.Location = New System.Drawing.Point(189, 65)
+        Me.txtAreia.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtAreia.Name = "txtAreia"
         Me.txtAreia.PlaceholderText = "Areia"
-        Me.txtAreia.Size = New System.Drawing.Size(78, 27)
+        Me.txtAreia.Size = New System.Drawing.Size(69, 23)
         Me.txtAreia.TabIndex = 1
         Me.txtAreia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtFerro
         '
-        Me.txtFerro.Location = New System.Drawing.Point(24, 133)
+        Me.txtFerro.Location = New System.Drawing.Point(21, 100)
+        Me.txtFerro.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtFerro.Name = "txtFerro"
         Me.txtFerro.PlaceholderText = "Ferro"
-        Me.txtFerro.Size = New System.Drawing.Size(78, 27)
+        Me.txtFerro.Size = New System.Drawing.Size(69, 23)
         Me.txtFerro.TabIndex = 2
         Me.txtFerro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtPrata
         '
-        Me.txtPrata.Location = New System.Drawing.Point(120, 133)
+        Me.txtPrata.Location = New System.Drawing.Point(105, 100)
+        Me.txtPrata.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtPrata.Name = "txtPrata"
         Me.txtPrata.PlaceholderText = "Prata"
-        Me.txtPrata.Size = New System.Drawing.Size(78, 27)
+        Me.txtPrata.Size = New System.Drawing.Size(69, 23)
         Me.txtPrata.TabIndex = 3
         Me.txtPrata.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtCobre
         '
-        Me.txtCobre.Location = New System.Drawing.Point(216, 133)
+        Me.txtCobre.Location = New System.Drawing.Point(189, 100)
+        Me.txtCobre.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtCobre.Name = "txtCobre"
         Me.txtCobre.PlaceholderText = "Cobre"
-        Me.txtCobre.Size = New System.Drawing.Size(78, 27)
+        Me.txtCobre.Size = New System.Drawing.Size(69, 23)
         Me.txtCobre.TabIndex = 4
         Me.txtCobre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtVidro
         '
-        Me.txtVidro.Location = New System.Drawing.Point(312, 133)
+        Me.txtVidro.Location = New System.Drawing.Point(273, 100)
+        Me.txtVidro.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtVidro.Name = "txtVidro"
         Me.txtVidro.PlaceholderText = "Vidro"
-        Me.txtVidro.Size = New System.Drawing.Size(78, 27)
+        Me.txtVidro.Size = New System.Drawing.Size(69, 23)
         Me.txtVidro.TabIndex = 5
         Me.txtVidro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'seletorMenu
         '
         Me.seletorMenu.FormattingEnabled = True
-        Me.seletorMenu.Location = New System.Drawing.Point(62, 39)
+        Me.seletorMenu.Location = New System.Drawing.Point(54, 29)
+        Me.seletorMenu.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.seletorMenu.Name = "seletorMenu"
-        Me.seletorMenu.Size = New System.Drawing.Size(293, 28)
+        Me.seletorMenu.Size = New System.Drawing.Size(257, 23)
         Me.seletorMenu.TabIndex = 6
         '
         'btnGravar
         '
-        Me.btnGravar.Location = New System.Drawing.Point(169, 178)
+        Me.btnGravar.Location = New System.Drawing.Point(148, 134)
+        Me.btnGravar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnGravar.Name = "btnGravar"
-        Me.btnGravar.Size = New System.Drawing.Size(78, 29)
+        Me.btnGravar.Size = New System.Drawing.Size(68, 22)
         Me.btnGravar.TabIndex = 7
         Me.btnGravar.Text = "Gravar"
         Me.btnGravar.UseVisualStyleBackColor = True
@@ -108,17 +116,17 @@ Partial Class Processo_Pedra
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(149, 16)
+        Me.Label9.Location = New System.Drawing.Point(130, 12)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(119, 20)
+        Me.Label9.Size = New System.Drawing.Size(95, 15)
         Me.Label9.TabIndex = 37
         Me.Label9.Text = "Selecionar Menu"
         '
         'Processo_Pedra
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(418, 231)
+        Me.ClientSize = New System.Drawing.Size(366, 173)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.btnGravar)
         Me.Controls.Add(Me.seletorMenu)
@@ -128,7 +136,9 @@ Partial Class Processo_Pedra
         Me.Controls.Add(Me.txtFerro)
         Me.Controls.Add(Me.txtAreia)
         Me.Controls.Add(Me.txtPedra)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Processo_Pedra"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Minas 2 - Processo de Pedra"

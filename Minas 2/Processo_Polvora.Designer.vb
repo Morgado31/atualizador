@@ -37,17 +37,19 @@ Partial Class Processo_Polvora
         'SeletorMenu
         '
         Me.SeletorMenu.FormattingEnabled = True
-        Me.SeletorMenu.Location = New System.Drawing.Point(109, 44)
+        Me.SeletorMenu.Location = New System.Drawing.Point(95, 33)
+        Me.SeletorMenu.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.SeletorMenu.Name = "SeletorMenu"
-        Me.SeletorMenu.Size = New System.Drawing.Size(297, 28)
+        Me.SeletorMenu.Size = New System.Drawing.Size(260, 23)
         Me.SeletorMenu.TabIndex = 0
         '
         'txtQuantidade
         '
-        Me.txtQuantidade.Location = New System.Drawing.Point(28, 94)
+        Me.txtQuantidade.Location = New System.Drawing.Point(24, 70)
+        Me.txtQuantidade.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtQuantidade.Name = "txtQuantidade"
         Me.txtQuantidade.PlaceholderText = "Quantidade"
-        Me.txtQuantidade.Size = New System.Drawing.Size(160, 27)
+        Me.txtQuantidade.Size = New System.Drawing.Size(140, 23)
         Me.txtQuantidade.TabIndex = 1
         Me.txtQuantidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -55,43 +57,48 @@ Partial Class Processo_Polvora
         '
         Me.seletorEquipas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.seletorEquipas.FormattingEnabled = True
-        Me.seletorEquipas.Location = New System.Drawing.Point(28, 160)
+        Me.seletorEquipas.Location = New System.Drawing.Point(24, 120)
+        Me.seletorEquipas.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.seletorEquipas.Name = "seletorEquipas"
-        Me.seletorEquipas.Size = New System.Drawing.Size(160, 28)
+        Me.seletorEquipas.Size = New System.Drawing.Size(140, 23)
         Me.seletorEquipas.TabIndex = 2
         '
         'txtCliente
         '
-        Me.txtCliente.Location = New System.Drawing.Point(28, 127)
+        Me.txtCliente.Location = New System.Drawing.Point(24, 95)
+        Me.txtCliente.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtCliente.Name = "txtCliente"
         Me.txtCliente.PlaceholderText = "Cliente"
-        Me.txtCliente.Size = New System.Drawing.Size(160, 27)
+        Me.txtCliente.Size = New System.Drawing.Size(140, 23)
         Me.txtCliente.TabIndex = 3
         Me.txtCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtEntregar
         '
-        Me.txtEntregar.Location = New System.Drawing.Point(327, 127)
+        Me.txtEntregar.Location = New System.Drawing.Point(286, 95)
+        Me.txtEntregar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtEntregar.Name = "txtEntregar"
         Me.txtEntregar.ReadOnly = True
-        Me.txtEntregar.Size = New System.Drawing.Size(159, 27)
+        Me.txtEntregar.Size = New System.Drawing.Size(140, 23)
         Me.txtEntregar.TabIndex = 4
         Me.txtEntregar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'btnCraft
         '
-        Me.btnCraft.Location = New System.Drawing.Point(210, 109)
+        Me.btnCraft.Location = New System.Drawing.Point(184, 82)
+        Me.btnCraft.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnCraft.Name = "btnCraft"
-        Me.btnCraft.Size = New System.Drawing.Size(94, 26)
+        Me.btnCraft.Size = New System.Drawing.Size(82, 20)
         Me.btnCraft.TabIndex = 5
         Me.btnCraft.Text = "Craft"
         Me.btnCraft.UseVisualStyleBackColor = True
         '
         'btnGuardar
         '
-        Me.btnGuardar.Location = New System.Drawing.Point(210, 141)
+        Me.btnGuardar.Location = New System.Drawing.Point(184, 106)
+        Me.btnGuardar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(94, 26)
+        Me.btnGuardar.Size = New System.Drawing.Size(82, 20)
         Me.btnGuardar.TabIndex = 6
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = True
@@ -99,26 +106,26 @@ Partial Class Processo_Polvora
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(327, 104)
+        Me.Label1.Location = New System.Drawing.Point(286, 78)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(159, 20)
+        Me.Label1.Size = New System.Drawing.Size(125, 15)
         Me.Label1.TabIndex = 7
         Me.Label1.Text = "Quantidade a Entregar"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(197, 21)
+        Me.Label2.Location = New System.Drawing.Point(172, 16)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(119, 20)
+        Me.Label2.Size = New System.Drawing.Size(95, 15)
         Me.Label2.TabIndex = 8
         Me.Label2.Text = "Selecionar Menu"
         '
         'Processo_Polvora
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(509, 203)
+        Me.ClientSize = New System.Drawing.Size(445, 152)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnGuardar)
@@ -128,11 +135,13 @@ Partial Class Processo_Polvora
         Me.Controls.Add(Me.seletorEquipas)
         Me.Controls.Add(Me.txtQuantidade)
         Me.Controls.Add(Me.SeletorMenu)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.MaximizeBox = False
         Me.Name = "Processo_Polvora"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Minas2 - Processo de Polvora"
+        Me.Text = "Minas2 - Craft de Polvora"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

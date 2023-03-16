@@ -331,7 +331,7 @@ Partial Class Processo_Legal
         '
         'btnDrill
         '
-        Me.btnDrill.Location = New System.Drawing.Point(107, 180)
+        Me.btnDrill.Location = New System.Drawing.Point(107, 181)
         Me.btnDrill.Name = "btnDrill"
         Me.btnDrill.Size = New System.Drawing.Size(70, 23)
         Me.btnDrill.TabIndex = 30
