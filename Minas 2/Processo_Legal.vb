@@ -98,6 +98,13 @@ Public Class Processo_Legal
 
     End Sub
 
+    Private Sub btnDrill_Click(sender As Object, e As EventArgs) Handles btnDrill.Click
+
+        Dim formE As New Minning_Drill()
+        formE.Show()
+
+    End Sub
+
     Private Sub btnProcessar_Click(sender As Object, e As EventArgs) Handles btnProcessar.Click
 
         'Definição dos valores de Pedra e Areia

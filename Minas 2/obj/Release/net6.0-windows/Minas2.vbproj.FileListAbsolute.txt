@@ -31,3 +31,4 @@ C:\Users\joaomorgado\Desktop\Repositório\atualizador\Minas 2\obj\Release\net6.0
 C:\Users\joaomorgado\Desktop\Repositório\atualizador\Minas 2\obj\Release\net6.0-windows\Minas_2.Processo_Legal.resources
 C:\Users\joaomorgado\Desktop\Repositório\atualizador\Minas 2\obj\Release\net6.0-windows\Minas_2.Processo_Polvora.resources
 C:\Users\joaomorgado\Desktop\Repositório\atualizador\Minas 2\obj\Release\net6.0-windows\Minas_2.Processo_Pedra.resources
+C:\Users\joaomorgado\Desktop\Repositório\atualizador\Minas 2\obj\Release\net6.0-windows\Minas_2.Minning_Drill.resources

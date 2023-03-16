@@ -51,85 +51,89 @@ Partial Class Processo_Legal
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtMinério = New System.Windows.Forms.TextBox()
+        Me.btnDrill = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(374, 29)
+        Me.Label3.Location = New System.Drawing.Point(327, 22)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(43, 20)
+        Me.Label3.Size = New System.Drawing.Size(34, 15)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Ferro"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(374, 61)
+        Me.Label4.Location = New System.Drawing.Point(327, 46)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(43, 20)
+        Me.Label4.Size = New System.Drawing.Size(34, 15)
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "Prata"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(368, 94)
+        Me.Label5.Location = New System.Drawing.Point(322, 70)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(49, 20)
+        Me.Label5.Size = New System.Drawing.Size(39, 15)
         Me.Label5.TabIndex = 4
         Me.Label5.Text = "Cobre"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(372, 128)
+        Me.Label6.Location = New System.Drawing.Point(326, 96)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(45, 20)
+        Me.Label6.Size = New System.Drawing.Size(35, 15)
         Me.Label6.TabIndex = 5
         Me.Label6.Text = "Vidro"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(351, 253)
+        Me.Label7.Location = New System.Drawing.Point(307, 190)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(66, 20)
+        Me.Label7.Size = New System.Drawing.Size(52, 15)
         Me.Label7.TabIndex = 6
         Me.Label7.Text = "Dinheiro"
         '
         'txtAvisoValor
         '
         Me.txtAvisoValor.AutoSize = True
-        Me.txtAvisoValor.Location = New System.Drawing.Point(512, 253)
+        Me.txtAvisoValor.Location = New System.Drawing.Point(448, 190)
         Me.txtAvisoValor.Name = "txtAvisoValor"
-        Me.txtAvisoValor.Size = New System.Drawing.Size(0, 20)
+        Me.txtAvisoValor.Size = New System.Drawing.Size(0, 15)
         Me.txtAvisoValor.TabIndex = 7
         '
         'txtPedra
         '
-        Me.txtPedra.Location = New System.Drawing.Point(27, 73)
+        Me.txtPedra.Location = New System.Drawing.Point(24, 55)
+        Me.txtPedra.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtPedra.Name = "txtPedra"
         Me.txtPedra.PlaceholderText = "Pedra"
-        Me.txtPedra.Size = New System.Drawing.Size(174, 27)
+        Me.txtPedra.Size = New System.Drawing.Size(153, 23)
         Me.txtPedra.TabIndex = 8
         Me.txtPedra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtAreia
         '
-        Me.txtAreia.Location = New System.Drawing.Point(27, 106)
+        Me.txtAreia.Location = New System.Drawing.Point(24, 80)
+        Me.txtAreia.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtAreia.Name = "txtAreia"
         Me.txtAreia.PlaceholderText = "Areia"
-        Me.txtAreia.Size = New System.Drawing.Size(174, 27)
+        Me.txtAreia.Size = New System.Drawing.Size(153, 23)
         Me.txtAreia.TabIndex = 9
         Me.txtAreia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtCliente
         '
-        Me.txtCliente.Location = New System.Drawing.Point(27, 172)
+        Me.txtCliente.Location = New System.Drawing.Point(24, 129)
+        Me.txtCliente.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtCliente.Name = "txtCliente"
         Me.txtCliente.PlaceholderText = "Cliente"
-        Me.txtCliente.Size = New System.Drawing.Size(174, 27)
+        Me.txtCliente.Size = New System.Drawing.Size(153, 23)
         Me.txtCliente.TabIndex = 10
         Me.txtCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -138,80 +142,89 @@ Partial Class Processo_Legal
         Me.SeletorEquipas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.SeletorEquipas.DropDownWidth = 151
         Me.SeletorEquipas.FormattingEnabled = True
-        Me.SeletorEquipas.Location = New System.Drawing.Point(27, 205)
+        Me.SeletorEquipas.Location = New System.Drawing.Point(24, 154)
+        Me.SeletorEquipas.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.SeletorEquipas.Name = "SeletorEquipas"
-        Me.SeletorEquipas.Size = New System.Drawing.Size(174, 28)
+        Me.SeletorEquipas.Size = New System.Drawing.Size(153, 23)
         Me.SeletorEquipas.TabIndex = 11
         '
         'btnProcessar
         '
-        Me.btnProcessar.Location = New System.Drawing.Point(238, 122)
+        Me.btnProcessar.Location = New System.Drawing.Point(208, 92)
+        Me.btnProcessar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnProcessar.Name = "btnProcessar"
-        Me.btnProcessar.Size = New System.Drawing.Size(94, 29)
+        Me.btnProcessar.Size = New System.Drawing.Size(82, 22)
         Me.btnProcessar.TabIndex = 12
         Me.btnProcessar.Text = "Processar"
         Me.btnProcessar.UseVisualStyleBackColor = True
         '
         'btnGravar
         '
-        Me.btnGravar.Location = New System.Drawing.Point(65, 239)
+        Me.btnGravar.Location = New System.Drawing.Point(24, 181)
+        Me.btnGravar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnGravar.Name = "btnGravar"
-        Me.btnGravar.Size = New System.Drawing.Size(94, 29)
+        Me.btnGravar.Size = New System.Drawing.Size(70, 23)
         Me.btnGravar.TabIndex = 13
         Me.btnGravar.Text = "Gravar"
         Me.btnGravar.UseVisualStyleBackColor = True
         '
         'txtFerro
         '
-        Me.txtFerro.Location = New System.Drawing.Point(423, 26)
+        Me.txtFerro.Location = New System.Drawing.Point(370, 20)
+        Me.txtFerro.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtFerro.Name = "txtFerro"
         Me.txtFerro.ReadOnly = True
-        Me.txtFerro.Size = New System.Drawing.Size(83, 27)
+        Me.txtFerro.Size = New System.Drawing.Size(73, 23)
         Me.txtFerro.TabIndex = 14
         Me.txtFerro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtPrata
         '
-        Me.txtPrata.Location = New System.Drawing.Point(423, 58)
+        Me.txtPrata.Location = New System.Drawing.Point(370, 44)
+        Me.txtPrata.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtPrata.Name = "txtPrata"
         Me.txtPrata.ReadOnly = True
-        Me.txtPrata.Size = New System.Drawing.Size(83, 27)
+        Me.txtPrata.Size = New System.Drawing.Size(73, 23)
         Me.txtPrata.TabIndex = 15
         Me.txtPrata.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtCobre
         '
-        Me.txtCobre.Location = New System.Drawing.Point(423, 91)
+        Me.txtCobre.Location = New System.Drawing.Point(370, 68)
+        Me.txtCobre.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtCobre.Name = "txtCobre"
         Me.txtCobre.ReadOnly = True
-        Me.txtCobre.Size = New System.Drawing.Size(83, 27)
+        Me.txtCobre.Size = New System.Drawing.Size(73, 23)
         Me.txtCobre.TabIndex = 16
         Me.txtCobre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtVidro
         '
-        Me.txtVidro.Location = New System.Drawing.Point(423, 125)
+        Me.txtVidro.Location = New System.Drawing.Point(370, 94)
+        Me.txtVidro.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtVidro.Name = "txtVidro"
         Me.txtVidro.ReadOnly = True
-        Me.txtVidro.Size = New System.Drawing.Size(83, 27)
+        Me.txtVidro.Size = New System.Drawing.Size(73, 23)
         Me.txtVidro.TabIndex = 17
         Me.txtVidro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtDinheiro
         '
-        Me.txtDinheiro.Location = New System.Drawing.Point(423, 250)
+        Me.txtDinheiro.Location = New System.Drawing.Point(370, 188)
+        Me.txtDinheiro.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtDinheiro.Name = "txtDinheiro"
         Me.txtDinheiro.ReadOnly = True
-        Me.txtDinheiro.Size = New System.Drawing.Size(83, 27)
+        Me.txtDinheiro.Size = New System.Drawing.Size(73, 23)
         Me.txtDinheiro.TabIndex = 18
         Me.txtDinheiro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'checkFerro
         '
         Me.checkFerro.AutoSize = True
-        Me.checkFerro.Location = New System.Drawing.Point(512, 27)
+        Me.checkFerro.Location = New System.Drawing.Point(448, 20)
+        Me.checkFerro.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.checkFerro.Name = "checkFerro"
-        Me.checkFerro.Size = New System.Drawing.Size(103, 24)
+        Me.checkFerro.Size = New System.Drawing.Size(83, 19)
         Me.checkFerro.TabIndex = 19
         Me.checkFerro.Text = "Armazenar"
         Me.checkFerro.UseVisualStyleBackColor = True
@@ -219,9 +232,10 @@ Partial Class Processo_Legal
         'checkPrata
         '
         Me.checkPrata.AutoSize = True
-        Me.checkPrata.Location = New System.Drawing.Point(512, 59)
+        Me.checkPrata.Location = New System.Drawing.Point(448, 44)
+        Me.checkPrata.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.checkPrata.Name = "checkPrata"
-        Me.checkPrata.Size = New System.Drawing.Size(103, 24)
+        Me.checkPrata.Size = New System.Drawing.Size(83, 19)
         Me.checkPrata.TabIndex = 20
         Me.checkPrata.Text = "Armazenar"
         Me.checkPrata.UseVisualStyleBackColor = True
@@ -229,9 +243,10 @@ Partial Class Processo_Legal
         'checkCobre
         '
         Me.checkCobre.AutoSize = True
-        Me.checkCobre.Location = New System.Drawing.Point(512, 92)
+        Me.checkCobre.Location = New System.Drawing.Point(448, 69)
+        Me.checkCobre.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.checkCobre.Name = "checkCobre"
-        Me.checkCobre.Size = New System.Drawing.Size(103, 24)
+        Me.checkCobre.Size = New System.Drawing.Size(83, 19)
         Me.checkCobre.TabIndex = 21
         Me.checkCobre.Text = "Armazenar"
         Me.checkCobre.UseVisualStyleBackColor = True
@@ -239,9 +254,10 @@ Partial Class Processo_Legal
         'checkVidro
         '
         Me.checkVidro.AutoSize = True
-        Me.checkVidro.Location = New System.Drawing.Point(512, 126)
+        Me.checkVidro.Location = New System.Drawing.Point(448, 94)
+        Me.checkVidro.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.checkVidro.Name = "checkVidro"
-        Me.checkVidro.Size = New System.Drawing.Size(103, 24)
+        Me.checkVidro.Size = New System.Drawing.Size(83, 19)
         Me.checkVidro.TabIndex = 22
         Me.checkVidro.Text = "Armazenar"
         Me.checkVidro.UseVisualStyleBackColor = True
@@ -250,70 +266,84 @@ Partial Class Processo_Legal
         '
         Me.seletorMenu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.seletorMenu.FormattingEnabled = True
-        Me.seletorMenu.Location = New System.Drawing.Point(60, 32)
+        Me.seletorMenu.Location = New System.Drawing.Point(52, 24)
+        Me.seletorMenu.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.seletorMenu.Name = "seletorMenu"
-        Me.seletorMenu.Size = New System.Drawing.Size(271, 28)
+        Me.seletorMenu.Size = New System.Drawing.Size(238, 23)
         Me.seletorMenu.TabIndex = 23
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(136, 9)
+        Me.Label8.Location = New System.Drawing.Point(119, 7)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(119, 20)
+        Me.Label8.Size = New System.Drawing.Size(95, 15)
         Me.Label8.TabIndex = 24
         Me.Label8.Text = "Selecionar Menu"
         '
         'txtNíquel
         '
-        Me.txtNíquel.Location = New System.Drawing.Point(423, 172)
+        Me.txtNíquel.Location = New System.Drawing.Point(370, 129)
+        Me.txtNíquel.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtNíquel.Name = "txtNíquel"
         Me.txtNíquel.ReadOnly = True
-        Me.txtNíquel.Size = New System.Drawing.Size(83, 27)
+        Me.txtNíquel.Size = New System.Drawing.Size(73, 23)
         Me.txtNíquel.TabIndex = 25
         Me.txtNíquel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtEnxofre
         '
-        Me.txtEnxofre.Location = New System.Drawing.Point(423, 205)
+        Me.txtEnxofre.Location = New System.Drawing.Point(370, 154)
+        Me.txtEnxofre.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtEnxofre.Name = "txtEnxofre"
         Me.txtEnxofre.ReadOnly = True
-        Me.txtEnxofre.Size = New System.Drawing.Size(83, 27)
+        Me.txtEnxofre.Size = New System.Drawing.Size(73, 23)
         Me.txtEnxofre.TabIndex = 26
         Me.txtEnxofre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(364, 175)
+        Me.Label1.Location = New System.Drawing.Point(318, 131)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(53, 20)
+        Me.Label1.Size = New System.Drawing.Size(42, 15)
         Me.Label1.TabIndex = 27
         Me.Label1.Text = "Níquel"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(358, 208)
+        Me.Label2.Location = New System.Drawing.Point(313, 156)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(59, 20)
+        Me.Label2.Size = New System.Drawing.Size(47, 15)
         Me.Label2.TabIndex = 28
         Me.Label2.Text = "Enxofre"
         '
         'txtMinério
         '
-        Me.txtMinério.Location = New System.Drawing.Point(27, 139)
+        Me.txtMinério.Location = New System.Drawing.Point(24, 104)
+        Me.txtMinério.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtMinério.Name = "txtMinério"
         Me.txtMinério.PlaceholderText = "Minério"
-        Me.txtMinério.Size = New System.Drawing.Size(174, 27)
+        Me.txtMinério.Size = New System.Drawing.Size(153, 23)
         Me.txtMinério.TabIndex = 29
         Me.txtMinério.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
+        'btnDrill
+        '
+        Me.btnDrill.Location = New System.Drawing.Point(107, 180)
+        Me.btnDrill.Name = "btnDrill"
+        Me.btnDrill.Size = New System.Drawing.Size(70, 23)
+        Me.btnDrill.TabIndex = 30
+        Me.btnDrill.Text = "Drill's"
+        Me.btnDrill.UseVisualStyleBackColor = True
+        '
         'Processo_Legal
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(624, 294)
+        Me.ClientSize = New System.Drawing.Size(546, 225)
+        Me.Controls.Add(Me.btnDrill)
         Me.Controls.Add(Me.txtMinério)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -344,6 +374,7 @@ Partial Class Processo_Legal
         Me.Controls.Add(Me.Label3)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.MaximizeBox = False
         Me.Name = "Processo_Legal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -380,4 +411,5 @@ Partial Class Processo_Legal
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents txtMinério As TextBox
+    Friend WithEvents btnDrill As Button
 End Class
