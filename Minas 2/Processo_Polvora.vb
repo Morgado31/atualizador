@@ -169,6 +169,11 @@ Public Class Processo_Polvora
             Exit Sub
         End If
 
+        If String.IsNullOrEmpty(txtTelemovel.Text) Then
+            MessageBox.Show("Introduzir número de telemóvel")
+            Exit Sub
+        End If
+
         Dim result As DialogResult = MessageBox.Show("Confirmas que os valores que introduzis-te estão corretos?", "Confirmação", MessageBoxButtons.OKCancel)
 
         If result <> DialogResult.OK Then
@@ -183,8 +188,9 @@ Public Class Processo_Polvora
             Dim Cliente As String = txtCliente.Text
             Dim Entregue As Integer = txtEntregar.Text
             Dim Data As String = DateAndTime.Now
+            Dim Telemovel As String = txtTelemovel.Text
 
-            Dim query As String = "INSERT INTO `Polvora` (`Quantidade`, `Trabalhador`, `Equipa`, `Cliente`, `Entregue`, `Data`) VALUES (@value1,@value2,@value3,@value4,@value5,@value6)"
+            Dim query As String = "INSERT INTO `Polvora` (`Quantidade`, `Trabalhador`, `Equipa`, `Cliente`, `Entregue`, `Data`, `Contacto`) VALUES (@value1,@value2,@value3,@value4,@value5,@value6,@value7)"
 
             Using command As New MySqlCommand(query, connection)
 
@@ -194,6 +200,7 @@ Public Class Processo_Polvora
                 command.Parameters.AddWithValue("@value4", Cliente)
                 command.Parameters.AddWithValue("@value5", Entregue)
                 command.Parameters.AddWithValue("@value6", Data)
+                command.Parameters.AddWithValue("@value7", Telemovel)
 
                 command.ExecuteNonQuery()
             End Using
@@ -202,6 +209,7 @@ Public Class Processo_Polvora
 
         txtCliente.Text = ""
         txtEntregar.Text = ""
+        txtTelemovel.Text = ""
         txtQuantidade.Text = ""
         seletorEquipas.SelectedIndex = -1
 

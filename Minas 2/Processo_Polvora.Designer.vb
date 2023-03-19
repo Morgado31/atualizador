@@ -32,6 +32,7 @@ Partial Class Processo_Polvora
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtTelemovel = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'SeletorMenu
@@ -57,7 +58,7 @@ Partial Class Processo_Polvora
         '
         Me.seletorEquipas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.seletorEquipas.FormattingEnabled = True
-        Me.seletorEquipas.Location = New System.Drawing.Point(24, 120)
+        Me.seletorEquipas.Location = New System.Drawing.Point(24, 151)
         Me.seletorEquipas.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.seletorEquipas.Name = "seletorEquipas"
         Me.seletorEquipas.Size = New System.Drawing.Size(140, 23)
@@ -65,7 +66,7 @@ Partial Class Processo_Polvora
         '
         'txtCliente
         '
-        Me.txtCliente.Location = New System.Drawing.Point(24, 95)
+        Me.txtCliente.Location = New System.Drawing.Point(24, 97)
         Me.txtCliente.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtCliente.Name = "txtCliente"
         Me.txtCliente.PlaceholderText = "Cliente"
@@ -75,7 +76,7 @@ Partial Class Processo_Polvora
         '
         'txtEntregar
         '
-        Me.txtEntregar.Location = New System.Drawing.Point(286, 95)
+        Me.txtEntregar.Location = New System.Drawing.Point(283, 109)
         Me.txtEntregar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtEntregar.Name = "txtEntregar"
         Me.txtEntregar.ReadOnly = True
@@ -85,7 +86,7 @@ Partial Class Processo_Polvora
         '
         'btnCraft
         '
-        Me.btnCraft.Location = New System.Drawing.Point(184, 82)
+        Me.btnCraft.Location = New System.Drawing.Point(181, 96)
         Me.btnCraft.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnCraft.Name = "btnCraft"
         Me.btnCraft.Size = New System.Drawing.Size(82, 20)
@@ -95,7 +96,7 @@ Partial Class Processo_Polvora
         '
         'btnGuardar
         '
-        Me.btnGuardar.Location = New System.Drawing.Point(184, 106)
+        Me.btnGuardar.Location = New System.Drawing.Point(181, 120)
         Me.btnGuardar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(82, 20)
@@ -106,7 +107,7 @@ Partial Class Processo_Polvora
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(286, 78)
+        Me.Label1.Location = New System.Drawing.Point(283, 92)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(125, 15)
         Me.Label1.TabIndex = 7
@@ -121,11 +122,21 @@ Partial Class Processo_Polvora
         Me.Label2.TabIndex = 8
         Me.Label2.Text = "Selecionar Menu"
         '
+        'txtTelemovel
+        '
+        Me.txtTelemovel.Location = New System.Drawing.Point(24, 124)
+        Me.txtTelemovel.Name = "txtTelemovel"
+        Me.txtTelemovel.PlaceholderText = "Número de Telmóvel"
+        Me.txtTelemovel.Size = New System.Drawing.Size(140, 23)
+        Me.txtTelemovel.TabIndex = 32
+        Me.txtTelemovel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'Processo_Polvora
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(445, 152)
+        Me.ClientSize = New System.Drawing.Size(445, 192)
+        Me.Controls.Add(Me.txtTelemovel)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnGuardar)
@@ -156,4 +167,5 @@ Partial Class Processo_Polvora
     Friend WithEvents btnGuardar As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents txtTelemovel As TextBox
 End Class
