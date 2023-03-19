@@ -12,7 +12,6 @@ Public Class Processo_Legal
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-
         'Introdução das equipas no seletorEquipas
 
         Using Connection As New MySqlConnection(connString)
@@ -255,6 +254,18 @@ Public Class Processo_Legal
             Exit Sub
         End If
 
+        If String.IsNullOrWhiteSpace(txtMinério.Text) = False Then
+            If String.IsNullOrEmpty(txtTelemovel.Text) Then
+                MessageBox.Show("Introduzir número de telemóvel")
+                Exit Sub
+            Else
+                If IsNumeric(txtTelemovel.Text) = False Then
+                    MessageBox.Show("Introduzir apenas números")
+                    Exit Sub
+                End If
+            End If
+        End If
+
         Dim result As DialogResult = MessageBox.Show("Confirmas que está tudo correto e entregas-te os materiais?" & vbCrLf & "Olha que o Scorpion vai atrás de ti!", "Confirmação", MessageBoxButtons.OKCancel)
 
         If result <> DialogResult.OK Then
@@ -267,10 +278,11 @@ Public Class Processo_Legal
         Dim inputEquipa As String = SeletorEquipas.SelectedItem.ToString()
         Dim outputPagamento As Integer
         Dim data As String = DateAndTime.Now
+        Dim Telemovel As String = txtTelemovel.Text
 
         'Conexão á database
 
-        Dim quary As String = "INSERT INTO `Venda de Materiais` (`Pedra`, `Areia`, `Trabalhador`, `Equipa`, `Cliente`, `Ferro`, `Prata`, `Cobre`, `Vidro`, `Pagamento`, `Data`, `Minério`, `Níquel`, `Enxofre`) VALUES (@value1,@value2,@value3,@value4,@value5,@value6,@value7,@value8,@value9,@value10,@value11,@value12,@value13,@value14)"
+        Dim quary As String = "INSERT INTO `Venda de Materiais` (`Pedra`, `Areia`, `Trabalhador`, `Equipa`, `Cliente`, `Ferro`, `Prata`, `Cobre`, `Vidro`, `Pagamento`, `Data`, `Minério`, `Níquel`, `Enxofre`, `Contacto`) VALUES (@value1,@value2,@value3,@value4,@value5,@value6,@value7,@value8,@value9,@value10,@value11,@value12,@value13,@value14,@value15)"
         Dim quaryStock As String = "INSERT INTO `Stocks` (`Equipa`, `Ferro`, `Prata`, `Cobre`, `Vidro`, `Cliente`, `Data`, `Trabalhador`) VALUES (@value1,@value2,@value3,@value4,@value5,@value6,@value7,@value8)"
 
         'Registo dos valores na tabela de Processo Legal
@@ -331,6 +343,7 @@ Public Class Processo_Legal
                 command.Parameters.AddWithValue("@value12", inputMinério)
                 command.Parameters.AddWithValue("@value13", outputNíquel)
                 command.Parameters.AddWithValue("@value14", outputEnxofre)
+                command.Parameters.AddWithValue("@value15", Telemovel)
 
                 command.ExecuteNonQuery()
 
@@ -362,6 +375,7 @@ Public Class Processo_Legal
         txtNíquel.Text = ""
         txtPrata.Text = ""
         txtVidro.Text = ""
+        txtTelemovel.Text = ""
         SeletorEquipas.SelectedIndex = -1
         txtAvisoValor.Text = ""
 

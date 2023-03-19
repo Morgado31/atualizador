@@ -129,7 +129,7 @@ Public Class Processo_Pedra
                 command.Parameters.AddWithValue("@value4", Ferro)
                 command.Parameters.AddWithValue("@value5", Prata)
                 command.Parameters.AddWithValue("@value6", Cobre)
-                command.Parameters.AddWithValue("@value7", Areia)
+                command.Parameters.AddWithValue("@value7", Vidro)
                 command.Parameters.AddWithValue("@value8", Data)
 
                 command.ExecuteNonQuery()

@@ -52,12 +52,13 @@ Partial Class Processo_Legal
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtMinério = New System.Windows.Forms.TextBox()
         Me.btnDrill = New System.Windows.Forms.Button()
+        Me.txtTelemovel = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(327, 22)
+        Me.Label3.Location = New System.Drawing.Point(327, 68)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(34, 15)
         Me.Label3.TabIndex = 2
@@ -66,7 +67,7 @@ Partial Class Processo_Legal
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(327, 46)
+        Me.Label4.Location = New System.Drawing.Point(327, 92)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(34, 15)
         Me.Label4.TabIndex = 3
@@ -75,7 +76,7 @@ Partial Class Processo_Legal
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(322, 70)
+        Me.Label5.Location = New System.Drawing.Point(322, 116)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(39, 15)
         Me.Label5.TabIndex = 4
@@ -84,7 +85,7 @@ Partial Class Processo_Legal
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(326, 96)
+        Me.Label6.Location = New System.Drawing.Point(326, 142)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(35, 15)
         Me.Label6.TabIndex = 5
@@ -93,7 +94,7 @@ Partial Class Processo_Legal
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(307, 190)
+        Me.Label7.Location = New System.Drawing.Point(307, 236)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(52, 15)
         Me.Label7.TabIndex = 6
@@ -102,14 +103,14 @@ Partial Class Processo_Legal
         'txtAvisoValor
         '
         Me.txtAvisoValor.AutoSize = True
-        Me.txtAvisoValor.Location = New System.Drawing.Point(448, 190)
+        Me.txtAvisoValor.Location = New System.Drawing.Point(448, 236)
         Me.txtAvisoValor.Name = "txtAvisoValor"
         Me.txtAvisoValor.Size = New System.Drawing.Size(0, 15)
         Me.txtAvisoValor.TabIndex = 7
         '
         'txtPedra
         '
-        Me.txtPedra.Location = New System.Drawing.Point(24, 55)
+        Me.txtPedra.Location = New System.Drawing.Point(24, 66)
         Me.txtPedra.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtPedra.Name = "txtPedra"
         Me.txtPedra.PlaceholderText = "Pedra"
@@ -119,7 +120,7 @@ Partial Class Processo_Legal
         '
         'txtAreia
         '
-        Me.txtAreia.Location = New System.Drawing.Point(24, 80)
+        Me.txtAreia.Location = New System.Drawing.Point(24, 92)
         Me.txtAreia.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtAreia.Name = "txtAreia"
         Me.txtAreia.PlaceholderText = "Areia"
@@ -129,7 +130,7 @@ Partial Class Processo_Legal
         '
         'txtCliente
         '
-        Me.txtCliente.Location = New System.Drawing.Point(24, 129)
+        Me.txtCliente.Location = New System.Drawing.Point(24, 144)
         Me.txtCliente.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtCliente.Name = "txtCliente"
         Me.txtCliente.PlaceholderText = "Cliente"
@@ -142,7 +143,7 @@ Partial Class Processo_Legal
         Me.SeletorEquipas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.SeletorEquipas.DropDownWidth = 151
         Me.SeletorEquipas.FormattingEnabled = True
-        Me.SeletorEquipas.Location = New System.Drawing.Point(24, 154)
+        Me.SeletorEquipas.Location = New System.Drawing.Point(24, 196)
         Me.SeletorEquipas.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.SeletorEquipas.Name = "SeletorEquipas"
         Me.SeletorEquipas.Size = New System.Drawing.Size(153, 23)
@@ -150,7 +151,7 @@ Partial Class Processo_Legal
         '
         'btnProcessar
         '
-        Me.btnProcessar.Location = New System.Drawing.Point(208, 92)
+        Me.btnProcessar.Location = New System.Drawing.Point(208, 119)
         Me.btnProcessar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnProcessar.Name = "btnProcessar"
         Me.btnProcessar.Size = New System.Drawing.Size(82, 22)
@@ -160,7 +161,7 @@ Partial Class Processo_Legal
         '
         'btnGravar
         '
-        Me.btnGravar.Location = New System.Drawing.Point(24, 181)
+        Me.btnGravar.Location = New System.Drawing.Point(24, 223)
         Me.btnGravar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnGravar.Name = "btnGravar"
         Me.btnGravar.Size = New System.Drawing.Size(70, 23)
@@ -170,7 +171,7 @@ Partial Class Processo_Legal
         '
         'txtFerro
         '
-        Me.txtFerro.Location = New System.Drawing.Point(370, 20)
+        Me.txtFerro.Location = New System.Drawing.Point(370, 66)
         Me.txtFerro.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtFerro.Name = "txtFerro"
         Me.txtFerro.ReadOnly = True
@@ -180,7 +181,7 @@ Partial Class Processo_Legal
         '
         'txtPrata
         '
-        Me.txtPrata.Location = New System.Drawing.Point(370, 44)
+        Me.txtPrata.Location = New System.Drawing.Point(370, 90)
         Me.txtPrata.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtPrata.Name = "txtPrata"
         Me.txtPrata.ReadOnly = True
@@ -190,7 +191,7 @@ Partial Class Processo_Legal
         '
         'txtCobre
         '
-        Me.txtCobre.Location = New System.Drawing.Point(370, 68)
+        Me.txtCobre.Location = New System.Drawing.Point(370, 114)
         Me.txtCobre.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtCobre.Name = "txtCobre"
         Me.txtCobre.ReadOnly = True
@@ -200,7 +201,7 @@ Partial Class Processo_Legal
         '
         'txtVidro
         '
-        Me.txtVidro.Location = New System.Drawing.Point(370, 94)
+        Me.txtVidro.Location = New System.Drawing.Point(370, 140)
         Me.txtVidro.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtVidro.Name = "txtVidro"
         Me.txtVidro.ReadOnly = True
@@ -210,7 +211,7 @@ Partial Class Processo_Legal
         '
         'txtDinheiro
         '
-        Me.txtDinheiro.Location = New System.Drawing.Point(370, 188)
+        Me.txtDinheiro.Location = New System.Drawing.Point(370, 234)
         Me.txtDinheiro.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtDinheiro.Name = "txtDinheiro"
         Me.txtDinheiro.ReadOnly = True
@@ -221,7 +222,7 @@ Partial Class Processo_Legal
         'checkFerro
         '
         Me.checkFerro.AutoSize = True
-        Me.checkFerro.Location = New System.Drawing.Point(448, 20)
+        Me.checkFerro.Location = New System.Drawing.Point(448, 66)
         Me.checkFerro.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.checkFerro.Name = "checkFerro"
         Me.checkFerro.Size = New System.Drawing.Size(83, 19)
@@ -232,7 +233,7 @@ Partial Class Processo_Legal
         'checkPrata
         '
         Me.checkPrata.AutoSize = True
-        Me.checkPrata.Location = New System.Drawing.Point(448, 44)
+        Me.checkPrata.Location = New System.Drawing.Point(448, 90)
         Me.checkPrata.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.checkPrata.Name = "checkPrata"
         Me.checkPrata.Size = New System.Drawing.Size(83, 19)
@@ -243,7 +244,7 @@ Partial Class Processo_Legal
         'checkCobre
         '
         Me.checkCobre.AutoSize = True
-        Me.checkCobre.Location = New System.Drawing.Point(448, 69)
+        Me.checkCobre.Location = New System.Drawing.Point(448, 115)
         Me.checkCobre.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.checkCobre.Name = "checkCobre"
         Me.checkCobre.Size = New System.Drawing.Size(83, 19)
@@ -254,7 +255,7 @@ Partial Class Processo_Legal
         'checkVidro
         '
         Me.checkVidro.AutoSize = True
-        Me.checkVidro.Location = New System.Drawing.Point(448, 94)
+        Me.checkVidro.Location = New System.Drawing.Point(448, 140)
         Me.checkVidro.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.checkVidro.Name = "checkVidro"
         Me.checkVidro.Size = New System.Drawing.Size(83, 19)
@@ -266,16 +267,16 @@ Partial Class Processo_Legal
         '
         Me.seletorMenu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.seletorMenu.FormattingEnabled = True
-        Me.seletorMenu.Location = New System.Drawing.Point(52, 24)
+        Me.seletorMenu.Location = New System.Drawing.Point(155, 32)
         Me.seletorMenu.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.seletorMenu.Name = "seletorMenu"
-        Me.seletorMenu.Size = New System.Drawing.Size(238, 23)
+        Me.seletorMenu.Size = New System.Drawing.Size(209, 23)
         Me.seletorMenu.TabIndex = 23
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(119, 7)
+        Me.Label8.Location = New System.Drawing.Point(208, 15)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(95, 15)
         Me.Label8.TabIndex = 24
@@ -283,7 +284,7 @@ Partial Class Processo_Legal
         '
         'txtNíquel
         '
-        Me.txtNíquel.Location = New System.Drawing.Point(370, 129)
+        Me.txtNíquel.Location = New System.Drawing.Point(370, 175)
         Me.txtNíquel.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtNíquel.Name = "txtNíquel"
         Me.txtNíquel.ReadOnly = True
@@ -293,7 +294,7 @@ Partial Class Processo_Legal
         '
         'txtEnxofre
         '
-        Me.txtEnxofre.Location = New System.Drawing.Point(370, 154)
+        Me.txtEnxofre.Location = New System.Drawing.Point(370, 200)
         Me.txtEnxofre.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtEnxofre.Name = "txtEnxofre"
         Me.txtEnxofre.ReadOnly = True
@@ -304,7 +305,7 @@ Partial Class Processo_Legal
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(318, 131)
+        Me.Label1.Location = New System.Drawing.Point(318, 177)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(42, 15)
         Me.Label1.TabIndex = 27
@@ -313,7 +314,7 @@ Partial Class Processo_Legal
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(313, 156)
+        Me.Label2.Location = New System.Drawing.Point(313, 202)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(47, 15)
         Me.Label2.TabIndex = 28
@@ -321,7 +322,7 @@ Partial Class Processo_Legal
         '
         'txtMinério
         '
-        Me.txtMinério.Location = New System.Drawing.Point(24, 104)
+        Me.txtMinério.Location = New System.Drawing.Point(24, 118)
         Me.txtMinério.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtMinério.Name = "txtMinério"
         Me.txtMinério.PlaceholderText = "Minério"
@@ -331,18 +332,28 @@ Partial Class Processo_Legal
         '
         'btnDrill
         '
-        Me.btnDrill.Location = New System.Drawing.Point(107, 181)
+        Me.btnDrill.Location = New System.Drawing.Point(107, 223)
         Me.btnDrill.Name = "btnDrill"
         Me.btnDrill.Size = New System.Drawing.Size(70, 23)
         Me.btnDrill.TabIndex = 30
         Me.btnDrill.Text = "Drill's"
         Me.btnDrill.UseVisualStyleBackColor = True
         '
+        'txtTelemovel
+        '
+        Me.txtTelemovel.Location = New System.Drawing.Point(24, 170)
+        Me.txtTelemovel.Name = "txtTelemovel"
+        Me.txtTelemovel.PlaceholderText = "Número de Telmóvel"
+        Me.txtTelemovel.Size = New System.Drawing.Size(153, 23)
+        Me.txtTelemovel.TabIndex = 31
+        Me.txtTelemovel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'Processo_Legal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(546, 225)
+        Me.ClientSize = New System.Drawing.Size(546, 273)
+        Me.Controls.Add(Me.txtTelemovel)
         Me.Controls.Add(Me.btnDrill)
         Me.Controls.Add(Me.txtMinério)
         Me.Controls.Add(Me.Label2)
@@ -412,4 +423,5 @@ Partial Class Processo_Legal
     Friend WithEvents Label2 As Label
     Friend WithEvents txtMinério As TextBox
     Friend WithEvents btnDrill As Button
+    Friend WithEvents txtTelemovel As TextBox
 End Class

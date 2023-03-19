@@ -113,7 +113,7 @@ Public Class Processo_Polvora
 
         quantidadeEntregar = Quantidade * 0.85
 
-        If seletorEquipas.SelectedItem.ToString() = "AIMF" Or seletorEquipas.SelectedItem.ToString() = "Yamaha" Or seletorEquipas.SelectedItem.ToString() = "Ronaldo" Or seletorEquipas.SelectedItem.ToString() = "The Garrison" Or seletorEquipas.SelectedItem.ToString() = "Peaky Blinder" Then
+        If seletorEquipas.SelectedItem.ToString() = "AIMF" Or seletorEquipas.SelectedItem.ToString() = "Yamaha" Or seletorEquipas.SelectedItem.ToString() = "Ronaldo" Or seletorEquipas.SelectedItem.ToString() = "The Garrison" Or seletorEquipas.SelectedItem.ToString() = "Peaky Blinder" Or seletorEquipas.SelectedItem.ToString() = "Penetra" Then
             quantidadeEntregar = Quantidade
         End If
 
