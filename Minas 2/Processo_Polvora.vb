@@ -213,7 +213,6 @@ Public Class Processo_Polvora
         txtQuantidade.Text = ""
         seletorEquipas.SelectedIndex = -1
 
-
     End Sub
 
     Private Sub Processo_Polvora_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
