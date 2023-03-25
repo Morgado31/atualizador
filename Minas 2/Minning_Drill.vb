@@ -6,10 +6,16 @@ Public Class Minning_Drill
     Dim mUsada As Integer
     Dim Fatura As Integer
     Dim QuantidadeVendida As Integer
+    Dim Pagar As Integer
+    Dim QuantidadeComprada As String
+    Dim QuantidadeUsadas As String
 
     Private Sub Minning_Drill_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         lblFatura.Text = "Fatura : " & 45000
+
+        txtQuantidadeUsada.Enabled = False
+        txtComprar.Enabled = False
 
         AtualizarQuantidade()
     End Sub
@@ -22,24 +28,83 @@ Public Class Minning_Drill
             mEquipa = 45000
         End If
 
-        Fatura = mEquipa - mUsada
-        lblFatura.Text = "Fatura : " & Fatura
-
+        CalcularFatura()
         AtualizarQuantidade()
     End Sub
 
     Private Sub checkUsada_CheckedChanged(sender As Object, e As EventArgs) Handles checkUsada.CheckedChanged
 
         If checkUsada.Checked = True Then
-            mUsada = 7500
+
+            txtQuantidadeUsada.Enabled = True
+
         Else
-            mUsada = 0
+
+            txtQuantidadeUsada.Enabled = False
+
         End If
 
+        txtQuantidadeUsada.Text = ""
+
+        CalcularFatura()
+        AtualizarQuantidade()
+    End Sub
+
+    Private Sub checkComprar_CheckedChanged(sender As Object, e As EventArgs) Handles checkComprar.CheckedChanged
+
+        If checkComprar.Checked = True Then
+
+            txtComprar.Enabled = True
+
+        Else
+
+            txtComprar.Enabled = False
+
+        End If
+
+        txtComprar.Text = ""
+
+        CalcularFatura()
+        AtualizarQuantidade()
+    End Sub
+
+    Private Sub CalcularFatura()
+
+        QuantidadeUsadas = txtQuantidadeUsada.Text
+        QuantidadeComprada = txtComprar.Text
+
+        If String.IsNullOrWhiteSpace(txtQuantidadeUsada.Text) Then
+            QuantidadeUsadas = 0
+        End If
+
+        If String.IsNullOrWhiteSpace(txtComprar.Text) Then
+            QuantidadeComprada = 0
+        End If
+
+        If checkUsada.Checked = False Then
+            QuantidadeUsadas = 0
+        End If
+
+        If checkComprar.Checked = False Then
+            QuantidadeComprada = 0
+        End If
+
+        mUsada = 7500 * QuantidadeUsadas
+
         Fatura = mEquipa - mUsada
+
         lblFatura.Text = "Fatura : " & Fatura
 
-        AtualizarQuantidade()
+        If checkComprar.Checked = True Then
+
+            checkEquipa.Checked = False
+            checkUsada.Checked = False
+
+            Pagar = 7500 * QuantidadeComprada
+            lblFatura.Text = "Tens de Pagar : " & Pagar
+
+        End If
+
     End Sub
 
     Private Sub VerificarDatas()
@@ -76,12 +141,13 @@ Public Class Minning_Drill
 
         Using connection As New MySqlConnection(connString)
             connection.Open()
-            Dim query As String = "INSERT INTO `Minning Drill` (`Trabalhador`, `Data`) VALUES (@value1,@value2)"
+            Dim query As String = "INSERT INTO `Minning Drill` (`Trabalhador`, `Data`, `Drill's Usadas`) VALUES (@value1,@value2,@value3)"
 
             Using Command As New MySqlCommand(query, connection)
 
                 Command.Parameters.AddWithValue("@value1", outputTrabalhador)
                 Command.Parameters.AddWithValue("@value2", Date.Today)
+                Command.Parameters.AddWithValue("@value3", QuantidadeUsadas)
 
                 Command.ExecuteNonQuery()
 
@@ -92,5 +158,68 @@ Public Class Minning_Drill
         checkEquipa.Checked = False
         checkUsada.Checked = False
         MessageBox.Show("Vendes-te uma Drill")
+    End Sub
+
+    Private Sub txtQuantidadeUsada_TextChanged(sender As Object, e As EventArgs) Handles txtQuantidadeUsada.TextChanged
+
+        Dim Quantidade As String
+
+        If String.IsNullOrWhiteSpace(txtQuantidadeUsada.Text) Then
+            Quantidade = 0
+        Else
+            Quantidade = txtQuantidadeUsada.Text
+        End If
+
+        If checkEquipa.Checked = True Then
+
+            If Quantidade > 4 Then
+
+                MessageBox.Show("Só podes aceitar no máximo 4 Drill's")
+                txtQuantidadeUsada.Text = ""
+                Exit Sub
+
+            End If
+
+        Else
+
+            If Quantidade > 6 Then
+
+                MessageBox.Show("Só podes aceitar no máximo 6 Drill's")
+                txtQuantidadeUsada.Text = ""
+                Exit Sub
+
+            End If
+
+        End If
+
+        CalcularFatura()
+    End Sub
+
+    Private Sub txtComprar_TextChanged(sender As Object, e As EventArgs) Handles txtComprar.TextChanged
+        CalcularFatura()
+    End Sub
+
+    Private Sub btnComprar_Click(sender As Object, e As EventArgs) Handles btnComprar.Click
+
+        Using connection As New MySqlConnection(connString)
+            connection.Open()
+            Dim query As String = "INSERT INTO `Minning Drill` (`Trabalhador`, `Data`, `Drill's Compradas`, `Pagamento`) VALUES (@value1,@value2,@value3,@value4)"
+
+            Using Command As New MySqlCommand(query, connection)
+
+                Command.Parameters.AddWithValue("@value1", outputTrabalhador)
+                Command.Parameters.AddWithValue("@value2", DateAndTime.DateString)
+                Command.Parameters.AddWithValue("@value3", QuantidadeComprada)
+                Command.Parameters.AddWithValue("@value4", Pagar)
+
+                Command.ExecuteNonQuery()
+
+            End Using
+
+        End Using
+        AtualizarQuantidade()
+        checkComprar.Checked = False
+        MessageBox.Show("Compra registada!")
+
     End Sub
 End Class

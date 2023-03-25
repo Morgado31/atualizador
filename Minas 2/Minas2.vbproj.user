@@ -4,6 +4,9 @@
     <_LastSelectedProfileId>C:\Users\joaomorgado\Desktop\Repositório\atualizador\Minas 2\My Project\PublishProfiles\Updater.pubxml</_LastSelectedProfileId>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Update="Administração.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Gestão_Stock.vb">
       <SubType>Form</SubType>
     </Compile>
