@@ -201,6 +201,10 @@ Public Class Minning_Drill
 
     Private Sub btnComprar_Click(sender As Object, e As EventArgs) Handles btnComprar.Click
 
+        If checkComprar.Checked = False Then
+            Exit Sub
+        End If
+
         Using connection As New MySqlConnection(connString)
             connection.Open()
             Dim query As String = "INSERT INTO `Minning Drill` (`Trabalhador`, `Data`, `Drill's Compradas`, `Pagamento`) VALUES (@value1,@value2,@value3,@value4)"
