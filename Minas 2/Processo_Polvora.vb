@@ -1,4 +1,7 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports Microsoft.VisualBasic.Logging
+Imports MySql.Data.MySqlClient
+Imports Mysqlx
+
 Public Class Processo_Polvora
 
     Private Sub Processo_Polvora_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -180,14 +183,19 @@ Public Class Processo_Polvora
             Exit Sub
         End If
 
+        Dim quaryLogsRoloute As String = "INSERT INTO `Logs` (`Polvora`, `Trabalhador`, `Stash`, `Data`) VALUES (@value1,@value2,@value3,@value4)"
+
+        Dim Quantidade As Integer = txtQuantidade.Text
+        Dim Entregue As Integer = txtEntregar.Text
+        Dim log As Integer = Quantidade - Entregue
+        Dim Data As String = DateAndTime.Now
+
         Using connection As New MySqlConnection(connString)
             connection.Open()
-            Dim Quantidade As Integer = txtQuantidade.Text
+
             Dim Trabalhador As String = MVariables.outputTrabalhador
             Dim Equipa As String = seletorEquipas.SelectedItem.ToString()
             Dim Cliente As String = txtCliente.Text
-            Dim Entregue As Integer = txtEntregar.Text
-            Dim Data As String = DateAndTime.Now
             Dim Telemovel As String = txtTelemovel.Text
 
             Dim query As String = "INSERT INTO `Polvora` (`Quantidade`, `Trabalhador`, `Equipa`, `Cliente`, `Entregue`, `Data`, `Contacto`) VALUES (@value1,@value2,@value3,@value4,@value5,@value6,@value7)"
@@ -203,6 +211,7 @@ Public Class Processo_Polvora
                 command.Parameters.AddWithValue("@value7", Telemovel)
 
                 command.ExecuteNonQuery()
+
             End Using
 
         End Using
@@ -212,6 +221,20 @@ Public Class Processo_Polvora
         txtTelemovel.Text = ""
         txtQuantidade.Text = ""
         seletorEquipas.SelectedIndex = -1
+
+        Using connection As New MySqlConnection(connString)
+            connection.Open()
+            Dim commandLogsRoloute As New MySqlCommand(quaryLogsRoloute, connection)
+            If log <> 0 Then
+                commandLogsRoloute.Parameters.AddWithValue("@value1", log)
+            Else
+                Exit Sub
+            End If
+            commandLogsRoloute.Parameters.AddWithValue("@value2", MVariables.outputTrabalhador)
+            commandLogsRoloute.Parameters.AddWithValue("@value3", "Roloute")
+            commandLogsRoloute.Parameters.AddWithValue("@value4", Data)
+            commandLogsRoloute.ExecuteNonQuery()
+        End Using
 
     End Sub
 

@@ -2,7 +2,6 @@
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Imports MySql.Data.MySqlClient
 
-
 Public Class Processo_Legal
 
     'Definição das variaveis para todos os Private Subs
@@ -99,8 +98,21 @@ Public Class Processo_Legal
 
     Private Sub btnDrill_Click(sender As Object, e As EventArgs) Handles btnDrill.Click
 
+        If MVariables.outputTrabalhador = "morgado" Or MVariables.outputTrabalhador = "Jack" Or MVariables.outputTrabalhador = "Nilson" Or MVariables.outputTrabalhador = "marques" Then
+            btnAdm.Visible = True
+        Else
+            btnAdm.Visible = False
+        End If
+
         Dim formE As New Minning_Drill()
         formE.Show()
+
+    End Sub
+
+    Private Sub btnAdm_Click(sender As Object, e As EventArgs) Handles btnAdm.Click
+
+        Dim formX As New Administração()
+        formX.Show()
 
     End Sub
 
@@ -284,6 +296,8 @@ Public Class Processo_Legal
 
         Dim quary As String = "INSERT INTO `Venda de Materiais` (`Pedra`, `Areia`, `Trabalhador`, `Equipa`, `Cliente`, `Ferro`, `Prata`, `Cobre`, `Vidro`, `Pagamento`, `Data`, `Minério`, `Níquel`, `Enxofre`, `Contacto`) VALUES (@value1,@value2,@value3,@value4,@value5,@value6,@value7,@value8,@value9,@value10,@value11,@value12,@value13,@value14,@value15)"
         Dim quaryStock As String = "INSERT INTO `Stocks` (`Equipa`, `Ferro`, `Prata`, `Cobre`, `Vidro`, `Cliente`, `Data`, `Trabalhador`) VALUES (@value1,@value2,@value3,@value4,@value5,@value6,@value7,@value8)"
+        Dim quaryLogsContentor As String = "INSERT INTO `Logs` (`Pedra`, `Areia`, `Trabalhador`, `Minério`, `Níquel`, `Enxofre`, `Stash`, `Data`) VALUES (@value1,@value2,@value3,@value4,@value5,@value6,@value7,@value8)"
+        Dim quaryLogsRoloute As String = "INSERT INTO `Logs` (`Trabalhador`, `Ferro`, `Prata`, `Cobre`, `Vidro`, `Stash`, `Data`) VALUES (@value1,@value2,@value3,@value4,@value5,@value6,@value7)"
 
         'Registo dos valores na tabela de Processo Legal
 
@@ -292,10 +306,19 @@ Public Class Processo_Legal
 
             Using command As New MySqlCommand(quary, connection)
                 Dim commandStock As New MySqlCommand(quaryStock, connection)
+                Dim commandLogsContentor As New MySqlCommand(quaryLogsContentor, connection)
+                Dim commandLogsRoloute As New MySqlCommand(quaryLogsRoloute, connection)
 
                 command.Parameters.AddWithValue("@value1", inputPedra)
+                commandLogsContentor.Parameters.AddWithValue("@value1", inputPedra)
+
                 command.Parameters.AddWithValue("@value2", inputAreia)
+                commandLogsContentor.Parameters.AddWithValue("@value2", inputAreia)
+
                 command.Parameters.AddWithValue("@value3", MVariables.outputTrabalhador)
+                commandLogsContentor.Parameters.AddWithValue("@value3", MVariables.outputTrabalhador)
+                commandLogsRoloute.Parameters.AddWithValue("@value1", MVariables.outputTrabalhador)
+
                 command.Parameters.AddWithValue("@value4", inputEquipa)
                 command.Parameters.AddWithValue("@value5", inputCliente)
                 commandStock.Parameters.AddWithValue("@value1", inputEquipa)
@@ -303,33 +326,41 @@ Public Class Processo_Legal
                 If checkFerro.Checked Then
                     command.Parameters.AddWithValue("@value6", -outputFerro)
                     commandStock.Parameters.AddWithValue("@value2", outputFerro)
+                    commandLogsRoloute.Parameters.AddWithValue("@value2", 0)
                 Else
                     command.Parameters.AddWithValue("@value6", outputFerro)
                     commandStock.Parameters.AddWithValue("@value2", 0)
+                    commandLogsRoloute.Parameters.AddWithValue("@value2", -outputFerro)
                 End If
 
                 If checkPrata.Checked Then
                     command.Parameters.AddWithValue("@value7", -outputPrata)
                     commandStock.Parameters.AddWithValue("@value3", outputPrata)
+                    commandLogsRoloute.Parameters.AddWithValue("@value3", 0)
                 Else
                     command.Parameters.AddWithValue("@value7", outputPrata)
                     commandStock.Parameters.AddWithValue("@value3", 0)
+                    commandLogsRoloute.Parameters.AddWithValue("@value3", -outputPrata)
                 End If
 
                 If checkCobre.Checked Then
                     command.Parameters.AddWithValue("@value8", -outputCobre)
                     commandStock.Parameters.AddWithValue("@value4", outputCobre)
+                    commandLogsRoloute.Parameters.AddWithValue("@value4", 0)
                 Else
                     command.Parameters.AddWithValue("@value8", outputCobre)
                     commandStock.Parameters.AddWithValue("@value4", 0)
+                    commandLogsRoloute.Parameters.AddWithValue("@value4", -outputCobre)
                 End If
 
                 If checkVidro.Checked Then
                     command.Parameters.AddWithValue("@value9", -outputVidro)
                     commandStock.Parameters.AddWithValue("@value5", outputVidro)
+                    commandLogsRoloute.Parameters.AddWithValue("@value5", 0)
                 Else
                     command.Parameters.AddWithValue("@value9", outputVidro)
                     commandStock.Parameters.AddWithValue("@value5", 0)
+                    commandLogsRoloute.Parameters.AddWithValue("@value5", -outputVidro)
                 End If
 
                 If outputDinheiro >= 0 Then
@@ -340,9 +371,23 @@ Public Class Processo_Legal
                 End If
 
                 command.Parameters.AddWithValue("@value11", data)
+
                 command.Parameters.AddWithValue("@value12", inputMinério)
+                commandLogsContentor.Parameters.AddWithValue("@value4", inputMinério)
+
                 command.Parameters.AddWithValue("@value13", outputNíquel)
+                commandLogsContentor.Parameters.AddWithValue("@value5", -outputNíquel)
+
                 command.Parameters.AddWithValue("@value14", outputEnxofre)
+                commandLogsContentor.Parameters.AddWithValue("@value6", -outputEnxofre)
+
+                commandLogsContentor.Parameters.AddWithValue("value7", "Contentor")
+                commandLogsContentor.Parameters.AddWithValue("@value8", data)
+                commandLogsContentor.ExecuteNonQuery()
+
+                commandLogsRoloute.Parameters.AddWithValue("@value6", "Roloute")
+                commandLogsRoloute.Parameters.AddWithValue("@value7", data)
+
                 command.Parameters.AddWithValue("@value15", Telemovel)
 
                 command.ExecuteNonQuery()
@@ -352,6 +397,10 @@ Public Class Processo_Legal
                     commandStock.Parameters.AddWithValue("@value7", data)
                     commandStock.Parameters.AddWithValue("@value8", MVariables.outputTrabalhador)
                     commandStock.ExecuteNonQuery()
+                End If
+
+                If commandLogsRoloute.Parameters("@value2").Value <> 0 OrElse commandLogsRoloute.Parameters("@value3").Value <> 0 OrElse commandLogsRoloute.Parameters("@value4").Value <> 0 OrElse commandLogsRoloute.Parameters("@value5").Value <> 0 Then
+                    commandLogsRoloute.ExecuteNonQuery()
                 End If
 
             End Using

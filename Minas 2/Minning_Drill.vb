@@ -139,17 +139,34 @@ Public Class Minning_Drill
 
     Private Sub btnVender_Click(sender As Object, e As EventArgs) Handles btnVender.Click
 
+        If QuantidadeVendida = 10 Then
+            Exit Sub
+        End If
+
         Using connection As New MySqlConnection(connString)
             connection.Open()
+
+            Dim Data As String = DateAndTime.Now
             Dim query As String = "INSERT INTO `Minning Drill` (`Trabalhador`, `Data`, `Drill's Usadas`) VALUES (@value1,@value2,@value3)"
+            Dim quaryLogsRoloute As String = "INSERT INTO `Logs` (`Trabalhador`, `Ferro`, `Prata`, `Borracha`, `Parafusos`, `Stash`, `Data`) VALUES (@value1,@value2,@value3,@value4,@value5,@value6,@value7)"
 
             Using Command As New MySqlCommand(query, connection)
+                Dim commandLogsRoloute As New MySqlCommand(quaryLogsRoloute, connection)
 
                 Command.Parameters.AddWithValue("@value1", outputTrabalhador)
                 Command.Parameters.AddWithValue("@value2", Date.Today)
                 Command.Parameters.AddWithValue("@value3", QuantidadeUsadas)
 
                 Command.ExecuteNonQuery()
+
+                commandLogsRoloute.Parameters.AddWithValue("@value1", MVariables.outputTrabalhador)
+                commandLogsRoloute.Parameters.AddWithValue("@value2", -90)
+                commandLogsRoloute.Parameters.AddWithValue("@value3", -15)
+                commandLogsRoloute.Parameters.AddWithValue("@value4", -30)
+                commandLogsRoloute.Parameters.AddWithValue("@value5", -5)
+                commandLogsRoloute.Parameters.AddWithValue("@value6", "Roloute")
+                commandLogsRoloute.Parameters.AddWithValue("@value7", Data)
+                commandLogsRoloute.ExecuteNonQuery()
 
             End Using
 

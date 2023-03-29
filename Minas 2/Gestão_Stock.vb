@@ -267,6 +267,7 @@ Public Class Gestão_Stock
             Dim equipaSelecionada As String = seletorStockEquipa.SelectedItem.ToString()
             Dim data As String = DateAndTime.Now
             Dim Cliente As String = txtCliente.Text
+            Dim quaryLogsRoloute As String = "INSERT INTO `Logs` (`Trabalhador`, `Ferro`, `Prata`, `Cobre`, `Vidro`, `Stash`, `Data`) VALUES (@value1,@value2,@value3,@value4,@value5,@value6,@value7)"
 
             If String.IsNullOrWhiteSpace(txtFerro.Text) Then
                 QuantidadeFerro = 0
@@ -425,9 +426,22 @@ Public Class Gestão_Stock
 
             End Using
 
+            Using commandLogsRoloute As New MySqlCommand(quaryLogsRoloute, connection)
+
+                commandLogsRoloute.Parameters.AddWithValue("@value1", MVariables.outputTrabalhador)
+                commandLogsRoloute.Parameters.AddWithValue("@value2", -QuantidadeFerro)
+                commandLogsRoloute.Parameters.AddWithValue("@value4", -QuantidadeCobre)
+                commandLogsRoloute.Parameters.AddWithValue("@value3", -QuantidadePrata)
+                commandLogsRoloute.Parameters.AddWithValue("@value5", -QuantidadeVidro)
+                commandLogsRoloute.Parameters.AddWithValue("@value6", "Roloute")
+                commandLogsRoloute.Parameters.AddWithValue("@value7", data)
+                commandLogsRoloute.ExecuteNonQuery()
+
+            End Using
+
         End Using
 
-        txtFerro.Clear()
+            txtFerro.Clear()
         txtPrata.Clear()
         txtCobre.Clear()
         txtVidro.Clear()

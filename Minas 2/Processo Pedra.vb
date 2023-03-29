@@ -121,6 +121,9 @@ Public Class Processo_Pedra
             connection.Open()
 
             Dim query As String = "INSERT INTO `Processo Legal` (`Pedra`, `Areia`, `Trabalhador`, `Ferro`, `Prata`, `Cobre`, `Vidro`, `Data`) VALUES (@value1,@value2,@value3,@value4,@value5,@value6,@value7,@value8)"
+            Dim quaryLogsContentor As String = "INSERT INTO `Logs` (`Pedra`, `Areia`, `Trabalhador`, `Stash`, `Data`) VALUES (@value1,@value2,@value3,@value4,@value5)"
+            Dim quaryLogsRoloute As String = "INSERT INTO `Logs` (`Trabalhador`, `Ferro`, `Prata`, `Cobre`, `Vidro`, `Stash`, `Data`) VALUES (@value1,@value2,@value3,@value4,@value5,@value6,@value7)"
+
             Using command As New MySqlCommand(query, connection)
 
                 command.Parameters.AddWithValue("@value1", Pedra)
@@ -134,9 +137,38 @@ Public Class Processo_Pedra
 
                 command.ExecuteNonQuery()
             End Using
+
+            Using CommandLogsContentor As New MySqlCommand(quaryLogsContentor, connection)
+
+                CommandLogsContentor.Parameters.AddWithValue("@value1", -Pedra)
+                CommandLogsContentor.Parameters.AddWithValue("@value2", -Areia)
+                CommandLogsContentor.Parameters.AddWithValue("@value3", MVariables.outputTrabalhador)
+                CommandLogsContentor.Parameters.AddWithValue("@value4", "Contentor")
+                CommandLogsContentor.Parameters.AddWithValue("@value5", Data)
+
+                CommandLogsContentor.ExecuteNonQuery()
+
+            End Using
+
+            Using CommandLogsRoloute As New MySqlCommand(quaryLogsRoloute, connection)
+
+                CommandLogsRoloute.Parameters.AddWithValue("@value1", MVariables.outputTrabalhador)
+                CommandLogsRoloute.Parameters.AddWithValue("@value2", Ferro)
+                CommandLogsRoloute.Parameters.AddWithValue("@value3", Prata)
+                CommandLogsRoloute.Parameters.AddWithValue("@value4", Cobre)
+                CommandLogsRoloute.Parameters.AddWithValue("@value5", Vidro)
+                CommandLogsRoloute.Parameters.AddWithValue("@value6", "Roloute")
+                CommandLogsRoloute.Parameters.AddWithValue("@value7", Data)
+
+                CommandLogsRoloute.ExecuteNonQuery()
+
+            End Using
+
+
         End Using
 
         'Reset da app
+
         txtAreia.Text = ""
         txtCobre.Text = ""
         txtFerro.Text = ""

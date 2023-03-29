@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Processo_Legal
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Processo_Legal
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Processo_Legal))
         Me.Label3 = New System.Windows.Forms.Label()
@@ -53,6 +53,7 @@ Partial Class Processo_Legal
         Me.txtMinério = New System.Windows.Forms.TextBox()
         Me.btnDrill = New System.Windows.Forms.Button()
         Me.txtTelemovel = New System.Windows.Forms.TextBox()
+        Me.btnAdm = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label3
@@ -348,11 +349,22 @@ Partial Class Processo_Legal
         Me.txtTelemovel.TabIndex = 31
         Me.txtTelemovel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
+        'btnAdm
+        '
+        Me.btnAdm.Location = New System.Drawing.Point(24, 251)
+        Me.btnAdm.Name = "btnAdm"
+        Me.btnAdm.Size = New System.Drawing.Size(153, 23)
+        Me.btnAdm.TabIndex = 32
+        Me.btnAdm.Text = "Administração"
+        Me.btnAdm.UseVisualStyleBackColor = True
+        Me.btnAdm.Visible = False
+        '
         'Processo_Legal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(546, 273)
+        Me.ClientSize = New System.Drawing.Size(546, 286)
+        Me.Controls.Add(Me.btnAdm)
         Me.Controls.Add(Me.txtTelemovel)
         Me.Controls.Add(Me.btnDrill)
         Me.Controls.Add(Me.txtMinério)
@@ -424,4 +436,5 @@ Partial Class Processo_Legal
     Friend WithEvents txtMinério As TextBox
     Friend WithEvents btnDrill As Button
     Friend WithEvents txtTelemovel As TextBox
+    Friend WithEvents btnAdm As Button
 End Class
