@@ -2,7 +2,7 @@
 
 Public Class Minning_Drill
 
-    Dim mEquipa As Integer = 45000
+    Dim mEquipa As Integer = 80000
     Dim mUsada As Integer
     Dim Fatura As Integer
     Dim QuantidadeVendida As Integer
@@ -12,7 +12,7 @@ Public Class Minning_Drill
 
     Private Sub Minning_Drill_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        lblFatura.Text = "Fatura : " & 45000
+        lblFatura.Text = "Fatura : " & 80000
 
         txtQuantidadeUsada.Enabled = False
         txtComprar.Enabled = False
@@ -23,9 +23,9 @@ Public Class Minning_Drill
     Private Sub checkEquipa_CheckedChanged(sender As Object, e As EventArgs) Handles checkEquipa.CheckedChanged
 
         If checkEquipa.Checked = True Then
-            mEquipa = 35000
+            mEquipa = 60000
         Else
-            mEquipa = 45000
+            mEquipa = 80000
         End If
 
         CalcularFatura()

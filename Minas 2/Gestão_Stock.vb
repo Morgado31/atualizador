@@ -117,6 +117,11 @@ Public Class Gestão_Stock
                 formD.Show()
                 Me.Hide()
 
+                ' Case "Craft de Armas e Acessorios"
+                'Dim formE As New Craft_Armas()
+                'formE.Show()
+                'Me.Hide()
+
         End Select
 
     End Sub

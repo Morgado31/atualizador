@@ -7,6 +7,9 @@
     <Compile Update="Administração.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Craft_Armas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Gestão_Stock.vb">
       <SubType>Form</SubType>
     </Compile>

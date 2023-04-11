@@ -193,9 +193,9 @@ Public Class Processo_Legal
         'Calculo do dinheiro
 
         If SeletorEquipas.SelectedItem = "Minas" Then 'Sem equipa
-            outputDinheiro = parcelaFerro * 70 + parcelaCobre * 90 + parcelaPrata * 120 + parcelaVidro * 85 - ((inputPedra * 40) + (inputAreia * 5))
+            outputDinheiro = parcelaFerro * 235 + parcelaCobre * 285 + parcelaPrata * 185 + parcelaVidro * 135 - ((inputPedra * 65) + (inputAreia * 10))
         Else 'Com equipa
-            outputDinheiro = parcelaFerro * 65 + parcelaCobre * 80 + parcelaPrata * 100 + parcelaVidro * 60 - ((inputPedra * 40) + (inputAreia * 5))
+            outputDinheiro = parcelaFerro * 185 + parcelaCobre * 235 + parcelaPrata * 135 + parcelaVidro * 110 - ((inputPedra * 80) + (inputAreia * 15))
         End If
 
         Using connection As New MySqlConnection(connString)
@@ -457,6 +457,11 @@ Public Class Processo_Legal
                 Dim formD As New Processo_Legal()
                 formD.Show()
                 Me.Hide()
+
+                ' Case "Craft de Armas e Acessorios"
+                '    Dim formE As New Craft_Armas()
+                '   formE.Show()
+                '  Me.Hide()
 
         End Select
 
