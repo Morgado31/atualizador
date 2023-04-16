@@ -198,6 +198,10 @@ Public Class Processo_Legal
             outputDinheiro = parcelaFerro * 185 + parcelaCobre * 235 + parcelaPrata * 135 + parcelaVidro * 110 - ((inputPedra * 80) + (inputAreia * 15))
         End If
 
+        If SeletorEquipas.SelectedItem = "Sumiyoshi" Then
+            outputDinheiro = parcelaFerro * 155 + parcelaCobre * 205 + parcelaPrata * 105 + parcelaVidro * 80 - ((inputPedra * 80) + (inputAreia * 15))
+        End If
+
         Using connection As New MySqlConnection(connString)
             connection.Open()
             Try 'Parcerias (Pagam 0)
@@ -248,7 +252,6 @@ Public Class Processo_Legal
         txtNíquel.Text = outputNíquel
         txtEnxofre.Text = outputEnxofre
         txtDinheiro.Text = Math.Abs(outputDinheiro)
-
 
     End Sub
 
@@ -464,6 +467,74 @@ Public Class Processo_Legal
                 '  Me.Hide()
 
         End Select
+
+    End Sub
+
+    Private Sub btnRetirar_Click(sender As Object, e As EventArgs) Handles btnRetirar.Click
+
+        Dim Materias As String = seletorMaterial.SelectedItem.ToString
+        Dim quantidade As String = txtQuantidade.Text
+        Dim data As String = DateAndTime.Now
+
+        Using connection As New MySqlConnection(connString)
+
+            Dim query As String = "INSERT INTO `Logs` (`Trabalhador`, `" & Materias & "`, `Stash`, `Data`) VALUES (@value1,@value2,@value3,@value4)"
+
+            Using command As New MySqlCommand(query, connection)
+                connection.Open()
+
+                command.Parameters.AddWithValue("@value1", MVariables.outputTrabalhador)
+                command.Parameters.AddWithValue("@value2", -quantidade)
+
+                If Materias = "Pedra" Or Materias = "Areia" Or Materias = "Carvão" Or Materias = "Minério" Or Materias = "Níquel" Or Materias = "Enxofre" Then
+                    command.Parameters.AddWithValue("@value3", "Contentor")
+                Else
+                    command.Parameters.AddWithValue("@value3", "Roloute")
+                End If
+
+                command.Parameters.AddWithValue("@value4", data)
+
+                command.ExecuteNonQuery()
+            End Using
+
+        End Using
+
+        txtQuantidade.Text = ""
+        seletorMaterial.SelectedItem = -1
+
+    End Sub
+
+    Private Sub btnAdicionar_Click(sender As Object, e As EventArgs) Handles btnAdicionar.Click
+
+        Dim Materias As String = seletorMaterial.SelectedItem.ToString
+        Dim quantidade As String = txtQuantidade.Text
+        Dim data As String = DateAndTime.Now
+
+        Using connection As New MySqlConnection(connString)
+
+            Dim query As String = "INSERT INTO `Logs` (`Trabalhador`, `" & Materias & "`, `Stash`, `Data`) VALUES (@value1,@value2,@value3,@value4)"
+
+            Using command As New MySqlCommand(query, connection)
+                connection.Open()
+
+                command.Parameters.AddWithValue("@value1", MVariables.outputTrabalhador)
+                command.Parameters.AddWithValue("@value2", quantidade)
+
+                If Materias = "Pedra" Or Materias = "Areia" Or Materias = "Carvão" Or Materias = "Minério" Or Materias = "Níquel" Or Materias = "Enxofre" Then
+                    command.Parameters.AddWithValue("@value3", "Contentor")
+                Else
+                    command.Parameters.AddWithValue("@value3", "Roloute")
+                End If
+
+                command.Parameters.AddWithValue("@value4", data)
+
+                command.ExecuteNonQuery()
+            End Using
+
+        End Using
+
+        txtQuantidade.Text = ""
+        seletorMaterial.SelectedItem = -1
 
     End Sub
 

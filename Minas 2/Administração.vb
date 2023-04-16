@@ -126,40 +126,6 @@ Public Class Administração
         AtualizarQuantidades()
     End Sub
 
-    Private Sub btnGravarLogs_Click(sender As Object, e As EventArgs) Handles btnGravarLogs.Click
-
-        Dim Materias As String = seletorMaterial.SelectedItem.ToString
-        Dim quantidade As String = txtQuantidade.Text
-        Dim data As String = DateAndTime.Now
-
-        Using connection As New MySqlConnection(connString)
-
-            Dim query As String = "INSERT INTO `Logs` (`Trabalhador`, `" & Materias & "`, `Stash`, `Data`) VALUES (@value1,@value2,@value3,@value4)"
-
-            Using command As New MySqlCommand(query, connection)
-                connection.Open()
-
-                command.Parameters.AddWithValue("@value1", MVariables.outputTrabalhador)
-                command.Parameters.AddWithValue("@value2", quantidade)
-
-                If Materias = "Pedra" Or Materias = "Areia" Or Materias = "Carvão" Or Materias = "Minério" Or Materias = "Níquel" Or Materias = "Enxofre" Then
-                    command.Parameters.AddWithValue("@value3", "Contentor")
-                Else
-                    command.Parameters.AddWithValue("@value3", "Roloute")
-                End If
-
-                command.Parameters.AddWithValue("@value4", data)
-
-                command.ExecuteNonQuery()
-            End Using
-
-        End Using
-
-        txtQuantidade.Text = ""
-        seletorMaterial.SelectedItem = -1
-
-    End Sub
-
     Private Sub btnGravarEquipa_Click(sender As Object, e As EventArgs) Handles btnGravarEquipa.Click
 
         Dim equipa As String = txtEquipa.Text
@@ -180,4 +146,5 @@ Public Class Administração
         txtEquipa.Text = ""
 
     End Sub
+
 End Class
