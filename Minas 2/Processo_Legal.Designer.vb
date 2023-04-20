@@ -357,7 +357,7 @@ Partial Class Processo_Legal
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(71, 15)
         Me.Label9.TabIndex = 33
-        Me.Label9.Text = "Versão: 1.0.5"
+        Me.Label9.Text = "Versão: 1.0.6"
         '
         'Label10
         '
@@ -370,8 +370,9 @@ Partial Class Processo_Legal
         '
         'seletorMaterial
         '
+        Me.seletorMaterial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.seletorMaterial.FormattingEnabled = True
-        Me.seletorMaterial.Items.AddRange(New Object() {"Pedra", "Areia", "Carvão ", "Minério", "Níquel", "Enxofre", "Ferro", "Prata", "Cobre", "Vidro", "Polvora", "Borracha", "Parafusos"})
+        Me.seletorMaterial.Items.AddRange(New Object() {"Pedra", "Areia", "Carvão ", "Minério", "Níquel", "Enxofre", "Ferro", "Prata", "Cobre", "Vidro", "Polvora", "Borracha", "Parafusos", "Safiras"})
         Me.seletorMaterial.Location = New System.Drawing.Point(365, 40)
         Me.seletorMaterial.Name = "seletorMaterial"
         Me.seletorMaterial.Size = New System.Drawing.Size(119, 28)

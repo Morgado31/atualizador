@@ -55,13 +55,21 @@ Partial Class Administração
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtEquipa = New System.Windows.Forms.TextBox()
         Me.btnGravarEquipa = New System.Windows.Forms.Button()
+        Me.txtSafiras = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.selectorTrabalhador = New System.Windows.Forms.ComboBox()
+        Me.txtPagamento = New System.Windows.Forms.TextBox()
+        Me.btnPago = New System.Windows.Forms.Button()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label1.Location = New System.Drawing.Point(125, 19)
+        Me.Label1.Location = New System.Drawing.Point(122, 19)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(152, 28)
         Me.Label1.TabIndex = 0
@@ -129,7 +137,7 @@ Partial Class Administração
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label2.Location = New System.Drawing.Point(477, 19)
+        Me.Label2.Location = New System.Drawing.Point(565, 19)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(131, 28)
         Me.Label2.TabIndex = 7
@@ -192,7 +200,7 @@ Partial Class Administração
         'lblFerro
         '
         Me.lblFerro.AutoSize = True
-        Me.lblFerro.Location = New System.Drawing.Point(396, 55)
+        Me.lblFerro.Location = New System.Drawing.Point(466, 55)
         Me.lblFerro.Name = "lblFerro"
         Me.lblFerro.Size = New System.Drawing.Size(43, 20)
         Me.lblFerro.TabIndex = 14
@@ -201,7 +209,7 @@ Partial Class Administração
         'lblPrata
         '
         Me.lblPrata.AutoSize = True
-        Me.lblPrata.Location = New System.Drawing.Point(396, 90)
+        Me.lblPrata.Location = New System.Drawing.Point(466, 90)
         Me.lblPrata.Name = "lblPrata"
         Me.lblPrata.Size = New System.Drawing.Size(43, 20)
         Me.lblPrata.TabIndex = 15
@@ -210,7 +218,7 @@ Partial Class Administração
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(391, 119)
+        Me.Label5.Location = New System.Drawing.Point(461, 119)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(49, 20)
         Me.Label5.TabIndex = 16
@@ -219,7 +227,7 @@ Partial Class Administração
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(395, 152)
+        Me.Label6.Location = New System.Drawing.Point(465, 152)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(45, 20)
         Me.Label6.TabIndex = 17
@@ -228,7 +236,7 @@ Partial Class Administração
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(565, 55)
+        Me.Label7.Location = New System.Drawing.Point(635, 55)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(58, 20)
         Me.Label7.TabIndex = 18
@@ -237,7 +245,7 @@ Partial Class Administração
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(558, 87)
+        Me.Label8.Location = New System.Drawing.Point(628, 87)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(68, 20)
         Me.Label8.TabIndex = 19
@@ -246,7 +254,7 @@ Partial Class Administração
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(554, 119)
+        Me.Label3.Location = New System.Drawing.Point(624, 119)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(71, 20)
         Me.Label3.TabIndex = 20
@@ -254,7 +262,7 @@ Partial Class Administração
         '
         'txtCobre
         '
-        Me.txtCobre.Location = New System.Drawing.Point(447, 116)
+        Me.txtCobre.Location = New System.Drawing.Point(517, 116)
         Me.txtCobre.Name = "txtCobre"
         Me.txtCobre.ReadOnly = True
         Me.txtCobre.Size = New System.Drawing.Size(76, 27)
@@ -263,7 +271,7 @@ Partial Class Administração
         '
         'txtPrata
         '
-        Me.txtPrata.Location = New System.Drawing.Point(447, 84)
+        Me.txtPrata.Location = New System.Drawing.Point(517, 84)
         Me.txtPrata.Name = "txtPrata"
         Me.txtPrata.ReadOnly = True
         Me.txtPrata.Size = New System.Drawing.Size(76, 27)
@@ -272,7 +280,7 @@ Partial Class Administração
         '
         'txtFerro
         '
-        Me.txtFerro.Location = New System.Drawing.Point(447, 52)
+        Me.txtFerro.Location = New System.Drawing.Point(517, 52)
         Me.txtFerro.Name = "txtFerro"
         Me.txtFerro.ReadOnly = True
         Me.txtFerro.Size = New System.Drawing.Size(76, 27)
@@ -281,7 +289,7 @@ Partial Class Administração
         '
         'txtVidro
         '
-        Me.txtVidro.Location = New System.Drawing.Point(447, 149)
+        Me.txtVidro.Location = New System.Drawing.Point(517, 149)
         Me.txtVidro.Name = "txtVidro"
         Me.txtVidro.ReadOnly = True
         Me.txtVidro.Size = New System.Drawing.Size(76, 27)
@@ -290,7 +298,7 @@ Partial Class Administração
         '
         'txtParafusos
         '
-        Me.txtParafusos.Location = New System.Drawing.Point(629, 116)
+        Me.txtParafusos.Location = New System.Drawing.Point(699, 116)
         Me.txtParafusos.Name = "txtParafusos"
         Me.txtParafusos.ReadOnly = True
         Me.txtParafusos.Size = New System.Drawing.Size(76, 27)
@@ -299,7 +307,7 @@ Partial Class Administração
         '
         'txtBorracha
         '
-        Me.txtBorracha.Location = New System.Drawing.Point(629, 84)
+        Me.txtBorracha.Location = New System.Drawing.Point(699, 84)
         Me.txtBorracha.Name = "txtBorracha"
         Me.txtBorracha.ReadOnly = True
         Me.txtBorracha.Size = New System.Drawing.Size(76, 27)
@@ -308,7 +316,7 @@ Partial Class Administração
         '
         'txtPolvora
         '
-        Me.txtPolvora.Location = New System.Drawing.Point(629, 52)
+        Me.txtPolvora.Location = New System.Drawing.Point(699, 52)
         Me.txtPolvora.Name = "txtPolvora"
         Me.txtPolvora.ReadOnly = True
         Me.txtPolvora.Size = New System.Drawing.Size(76, 27)
@@ -317,7 +325,7 @@ Partial Class Administração
         '
         'btnAtualizar
         '
-        Me.btnAtualizar.Location = New System.Drawing.Point(728, 86)
+        Me.btnAtualizar.Location = New System.Drawing.Point(360, 85)
         Me.btnAtualizar.Name = "btnAtualizar"
         Me.btnAtualizar.Size = New System.Drawing.Size(83, 25)
         Me.btnAtualizar.TabIndex = 28
@@ -328,7 +336,7 @@ Partial Class Administração
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label4.Location = New System.Drawing.Point(304, 205)
+        Me.Label4.Location = New System.Drawing.Point(36, 206)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(161, 28)
         Me.Label4.TabIndex = 32
@@ -336,7 +344,7 @@ Partial Class Administração
         '
         'txtEquipa
         '
-        Me.txtEquipa.Location = New System.Drawing.Point(288, 237)
+        Me.txtEquipa.Location = New System.Drawing.Point(20, 238)
         Me.txtEquipa.Name = "txtEquipa"
         Me.txtEquipa.PlaceholderText = "Introduzir Equipa"
         Me.txtEquipa.Size = New System.Drawing.Size(192, 27)
@@ -345,18 +353,103 @@ Partial Class Administração
         '
         'btnGravarEquipa
         '
-        Me.btnGravarEquipa.Location = New System.Drawing.Point(337, 270)
+        Me.btnGravarEquipa.Location = New System.Drawing.Point(72, 271)
         Me.btnGravarEquipa.Name = "btnGravarEquipa"
         Me.btnGravarEquipa.Size = New System.Drawing.Size(89, 28)
         Me.btnGravarEquipa.TabIndex = 34
         Me.btnGravarEquipa.Text = "Adicionar"
         Me.btnGravarEquipa.UseVisualStyleBackColor = True
         '
+        'txtSafiras
+        '
+        Me.txtSafiras.Enabled = False
+        Me.txtSafiras.Location = New System.Drawing.Point(82, 149)
+        Me.txtSafiras.Name = "txtSafiras"
+        Me.txtSafiras.ReadOnly = True
+        Me.txtSafiras.Size = New System.Drawing.Size(76, 27)
+        Me.txtSafiras.TabIndex = 0
+        Me.txtSafiras.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(20, 152)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(53, 20)
+        Me.Label9.TabIndex = 35
+        Me.Label9.Text = "Safiras"
+        Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label10.Location = New System.Drawing.Point(299, 206)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(207, 28)
+        Me.Label10.TabIndex = 36
+        Me.Label10.Text = "Consultar Pagamentos"
+        '
+        'selectorTrabalhador
+        '
+        Me.selectorTrabalhador.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.selectorTrabalhador.FormattingEnabled = True
+        Me.selectorTrabalhador.Location = New System.Drawing.Point(265, 237)
+        Me.selectorTrabalhador.Name = "selectorTrabalhador"
+        Me.selectorTrabalhador.Size = New System.Drawing.Size(136, 28)
+        Me.selectorTrabalhador.TabIndex = 37
+        '
+        'txtPagamento
+        '
+        Me.txtPagamento.Enabled = False
+        Me.txtPagamento.Location = New System.Drawing.Point(407, 238)
+        Me.txtPagamento.Name = "txtPagamento"
+        Me.txtPagamento.Size = New System.Drawing.Size(125, 27)
+        Me.txtPagamento.TabIndex = 38
+        Me.txtPagamento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'btnPago
+        '
+        Me.btnPago.Location = New System.Drawing.Point(352, 271)
+        Me.btnPago.Name = "btnPago"
+        Me.btnPago.Size = New System.Drawing.Size(94, 29)
+        Me.btnPago.TabIndex = 39
+        Me.btnPago.Text = "Pago"
+        Me.btnPago.UseVisualStyleBackColor = True
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label11.Location = New System.Drawing.Point(553, 206)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(258, 28)
+        Me.Label11.TabIndex = 40
+        Me.Label11.Text = "Quantidade de Drills Usadas"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label13.Location = New System.Drawing.Point(584, 238)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(191, 28)
+        Me.Label13.TabIndex = 42
+        Me.Label13.Text = "DESENVOLVIMENTO"
+        '
         'Administração
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(823, 318)
+        Me.ClientSize = New System.Drawing.Size(823, 322)
+        Me.Controls.Add(Me.Label13)
+        Me.Controls.Add(Me.Label11)
+        Me.Controls.Add(Me.btnPago)
+        Me.Controls.Add(Me.txtPagamento)
+        Me.Controls.Add(Me.selectorTrabalhador)
+        Me.Controls.Add(Me.Label10)
+        Me.Controls.Add(Me.txtSafiras)
+        Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.btnGravarEquipa)
         Me.Controls.Add(Me.txtEquipa)
         Me.Controls.Add(Me.Label4)
@@ -433,4 +526,12 @@ Partial Class Administração
     Friend WithEvents Label4 As Label
     Friend WithEvents txtEquipa As TextBox
     Friend WithEvents btnGravarEquipa As Button
+    Friend WithEvents txtSafiras As TextBox
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label10 As Label
+    Friend WithEvents selectorTrabalhador As ComboBox
+    Friend WithEvents txtPagamento As TextBox
+    Friend WithEvents btnPago As Button
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Label13 As Label
 End Class

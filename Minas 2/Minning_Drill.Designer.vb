@@ -37,9 +37,10 @@ Partial Class Minning_Drill
         'checkEquipa
         '
         Me.checkEquipa.AutoSize = True
-        Me.checkEquipa.Location = New System.Drawing.Point(30, 57)
+        Me.checkEquipa.Location = New System.Drawing.Point(34, 76)
+        Me.checkEquipa.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.checkEquipa.Name = "checkEquipa"
-        Me.checkEquipa.Size = New System.Drawing.Size(91, 19)
+        Me.checkEquipa.Size = New System.Drawing.Size(112, 24)
         Me.checkEquipa.TabIndex = 2
         Me.checkEquipa.Text = "Com Equipa"
         Me.checkEquipa.UseVisualStyleBackColor = True
@@ -47,9 +48,10 @@ Partial Class Minning_Drill
         'checkUsada
         '
         Me.checkUsada.AutoSize = True
-        Me.checkUsada.Location = New System.Drawing.Point(30, 86)
+        Me.checkUsada.Location = New System.Drawing.Point(34, 115)
+        Me.checkUsada.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.checkUsada.Name = "checkUsada"
-        Me.checkUsada.Size = New System.Drawing.Size(159, 19)
+        Me.checkUsada.Size = New System.Drawing.Size(197, 24)
         Me.checkUsada.TabIndex = 3
         Me.checkUsada.Text = "Com Minning Drill Usada"
         Me.checkUsada.UseVisualStyleBackColor = True
@@ -57,17 +59,18 @@ Partial Class Minning_Drill
         'lblFatura
         '
         Me.lblFatura.AutoSize = True
-        Me.lblFatura.Location = New System.Drawing.Point(64, 144)
+        Me.lblFatura.Location = New System.Drawing.Point(73, 192)
         Me.lblFatura.Name = "lblFatura"
-        Me.lblFatura.Size = New System.Drawing.Size(46, 15)
+        Me.lblFatura.Size = New System.Drawing.Size(56, 20)
         Me.lblFatura.TabIndex = 4
         Me.lblFatura.Text = "Fatura :"
         '
         'btnVender
         '
-        Me.btnVender.Location = New System.Drawing.Point(30, 169)
+        Me.btnVender.Location = New System.Drawing.Point(34, 225)
+        Me.btnVender.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btnVender.Name = "btnVender"
-        Me.btnVender.Size = New System.Drawing.Size(75, 23)
+        Me.btnVender.Size = New System.Drawing.Size(86, 31)
         Me.btnVender.TabIndex = 6
         Me.btnVender.Text = "Vender"
         Me.btnVender.UseVisualStyleBackColor = True
@@ -75,17 +78,19 @@ Partial Class Minning_Drill
         'lblQuantidade
         '
         Me.lblQuantidade.AutoSize = True
-        Me.lblQuantidade.Location = New System.Drawing.Point(30, 27)
+        Me.lblQuantidade.Location = New System.Drawing.Point(34, 36)
         Me.lblQuantidade.Name = "lblQuantidade"
-        Me.lblQuantidade.Size = New System.Drawing.Size(0, 15)
+        Me.lblQuantidade.Size = New System.Drawing.Size(0, 20)
         Me.lblQuantidade.TabIndex = 7
         Me.lblQuantidade.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'btnComprar
         '
-        Me.btnComprar.Location = New System.Drawing.Point(111, 169)
+        Me.btnComprar.Enabled = False
+        Me.btnComprar.Location = New System.Drawing.Point(127, 225)
+        Me.btnComprar.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btnComprar.Name = "btnComprar"
-        Me.btnComprar.Size = New System.Drawing.Size(75, 23)
+        Me.btnComprar.Size = New System.Drawing.Size(86, 31)
         Me.btnComprar.TabIndex = 8
         Me.btnComprar.Text = "Comprar"
         Me.btnComprar.UseVisualStyleBackColor = True
@@ -93,36 +98,39 @@ Partial Class Minning_Drill
         'checkComprar
         '
         Me.checkComprar.AutoSize = True
-        Me.checkComprar.Location = New System.Drawing.Point(30, 115)
+        Me.checkComprar.Location = New System.Drawing.Point(34, 153)
+        Me.checkComprar.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.checkComprar.Name = "checkComprar"
-        Me.checkComprar.Size = New System.Drawing.Size(145, 19)
+        Me.checkComprar.Size = New System.Drawing.Size(181, 24)
         Me.checkComprar.TabIndex = 9
         Me.checkComprar.Text = "Comprar Drill's Usadas"
         Me.checkComprar.UseVisualStyleBackColor = True
         '
         'txtQuantidadeUsada
         '
-        Me.txtQuantidadeUsada.Location = New System.Drawing.Point(195, 84)
+        Me.txtQuantidadeUsada.Location = New System.Drawing.Point(223, 112)
+        Me.txtQuantidadeUsada.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtQuantidadeUsada.Name = "txtQuantidadeUsada"
         Me.txtQuantidadeUsada.PlaceholderText = "Quantidade"
-        Me.txtQuantidadeUsada.Size = New System.Drawing.Size(81, 23)
+        Me.txtQuantidadeUsada.Size = New System.Drawing.Size(92, 27)
         Me.txtQuantidadeUsada.TabIndex = 10
         Me.txtQuantidadeUsada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtComprar
         '
-        Me.txtComprar.Location = New System.Drawing.Point(195, 115)
+        Me.txtComprar.Location = New System.Drawing.Point(223, 153)
+        Me.txtComprar.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtComprar.Name = "txtComprar"
         Me.txtComprar.PlaceholderText = "Quantidade"
-        Me.txtComprar.Size = New System.Drawing.Size(81, 23)
+        Me.txtComprar.Size = New System.Drawing.Size(92, 27)
         Me.txtComprar.TabIndex = 11
         Me.txtComprar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Minning_Drill
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(312, 214)
+        Me.ClientSize = New System.Drawing.Size(357, 285)
         Me.Controls.Add(Me.txtComprar)
         Me.Controls.Add(Me.txtQuantidadeUsada)
         Me.Controls.Add(Me.checkComprar)
@@ -134,6 +142,7 @@ Partial Class Minning_Drill
         Me.Controls.Add(Me.checkEquipa)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.MaximizeBox = False
         Me.Name = "Minning_Drill"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

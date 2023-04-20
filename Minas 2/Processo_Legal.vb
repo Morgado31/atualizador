@@ -98,7 +98,7 @@ Public Class Processo_Legal
 
     Private Sub btnDrill_Click(sender As Object, e As EventArgs) Handles btnDrill.Click
 
-        If MVariables.outputTrabalhador = "morgado" Or MVariables.outputTrabalhador = "Jack" Or MVariables.outputTrabalhador = "Nilson" Or MVariables.outputTrabalhador = "marques" Then
+        If MVariables.outputTrabalhador = "morgado" Or MVariables.outputTrabalhador = "Jack" Or MVariables.outputTrabalhador = "Nilson" Or MVariables.outputTrabalhador = "marques" Or MVariables.outputTrabalhador = "techno" Then
             btnAdm.Visible = True
         Else
             btnAdm.Visible = False
@@ -301,7 +301,7 @@ Public Class Processo_Legal
         Dim quaryStock As String = "INSERT INTO `Stocks` (`Equipa`, `Ferro`, `Prata`, `Cobre`, `Vidro`, `Cliente`, `Data`, `Trabalhador`) VALUES (@value1,@value2,@value3,@value4,@value5,@value6,@value7,@value8)"
         Dim quaryLogsContentor As String = "INSERT INTO `Logs` (`Pedra`, `Areia`, `Trabalhador`, `Minério`, `Níquel`, `Enxofre`, `Stash`, `Data`) VALUES (@value1,@value2,@value3,@value4,@value5,@value6,@value7,@value8)"
         Dim quaryLogsRoloute As String = "INSERT INTO `Logs` (`Trabalhador`, `Ferro`, `Prata`, `Cobre`, `Vidro`, `Stash`, `Data`) VALUES (@value1,@value2,@value3,@value4,@value5,@value6,@value7)"
-
+        Dim quaryPagamentos As String = "INSERT INTO `Pagamentos` (`Trabalhador`, `Pagamento`, `Data`) VALUES (@value1,@value2,@value3)"
         'Registo dos valores na tabela de Processo Legal
 
         Using connection As New MySqlConnection(connString)
@@ -311,6 +311,7 @@ Public Class Processo_Legal
                 Dim commandStock As New MySqlCommand(quaryStock, connection)
                 Dim commandLogsContentor As New MySqlCommand(quaryLogsContentor, connection)
                 Dim commandLogsRoloute As New MySqlCommand(quaryLogsRoloute, connection)
+                Dim commandPagamentos As New MySqlCommand(quaryPagamentos, connection)
 
                 command.Parameters.AddWithValue("@value1", inputPedra)
                 commandLogsContentor.Parameters.AddWithValue("@value1", inputPedra)
@@ -406,6 +407,12 @@ Public Class Processo_Legal
                     commandLogsRoloute.ExecuteNonQuery()
                 End If
 
+                commandPagamentos.Parameters.AddWithValue("@value1", MVariables.outputTrabalhador)
+                commandPagamentos.Parameters.AddWithValue("@value2", outputPagamento)
+                commandPagamentos.Parameters.AddWithValue("@value3", data)
+
+                commandPagamentos.ExecuteNonQuery()
+
             End Using
 
         End Using
@@ -500,7 +507,7 @@ Public Class Processo_Legal
         End Using
 
         txtQuantidade.Text = ""
-        seletorMaterial.SelectedItem = -1
+        seletorMaterial.SelectedIndex = -1
 
     End Sub
 
@@ -534,7 +541,7 @@ Public Class Processo_Legal
         End Using
 
         txtQuantidade.Text = ""
-        seletorMaterial.SelectedItem = -1
+        seletorMaterial.SelectedIndex = -1
 
     End Sub
 

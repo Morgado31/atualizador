@@ -54,17 +54,18 @@ Partial Class Craft_Armas
         'SeletorMenu
         '
         Me.SeletorMenu.FormattingEnabled = True
-        Me.SeletorMenu.Location = New System.Drawing.Point(179, 30)
+        Me.SeletorMenu.Location = New System.Drawing.Point(205, 40)
+        Me.SeletorMenu.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.SeletorMenu.Name = "SeletorMenu"
-        Me.SeletorMenu.Size = New System.Drawing.Size(176, 23)
+        Me.SeletorMenu.Size = New System.Drawing.Size(201, 28)
         Me.SeletorMenu.TabIndex = 0
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(220, 12)
+        Me.Label8.Location = New System.Drawing.Point(251, 16)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(95, 15)
+        Me.Label8.Size = New System.Drawing.Size(119, 20)
         Me.Label8.TabIndex = 25
         Me.Label8.Text = "Selecionar Menu"
         '
@@ -72,9 +73,9 @@ Partial Class Craft_Armas
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label1.Location = New System.Drawing.Point(54, 69)
+        Me.Label1.Location = New System.Drawing.Point(62, 92)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(114, 21)
+        Me.Label1.Size = New System.Drawing.Size(141, 28)
         Me.Label1.TabIndex = 26
         Me.Label1.Text = "Craft de Armas"
         '
@@ -83,23 +84,26 @@ Partial Class Craft_Armas
         Me.seletorArma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.seletorArma.FormattingEnabled = True
         Me.seletorArma.Items.AddRange(New Object() {"Vintage", "Fajuta", "Revolver", "Tec-9", "Micro Uzi", "Draco", "Gusenberg", "Ak-47", ".50", "Famas", "PDW"})
-        Me.seletorArma.Location = New System.Drawing.Point(9, 103)
+        Me.seletorArma.Location = New System.Drawing.Point(10, 137)
+        Me.seletorArma.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.seletorArma.Name = "seletorArma"
-        Me.seletorArma.Size = New System.Drawing.Size(89, 23)
+        Me.seletorArma.Size = New System.Drawing.Size(101, 28)
         Me.seletorArma.TabIndex = 27
         '
         'txtQuantidadeArmas
         '
-        Me.txtQuantidadeArmas.Location = New System.Drawing.Point(113, 103)
+        Me.txtQuantidadeArmas.Location = New System.Drawing.Point(129, 137)
+        Me.txtQuantidadeArmas.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtQuantidadeArmas.Name = "txtQuantidadeArmas"
-        Me.txtQuantidadeArmas.Size = New System.Drawing.Size(89, 23)
+        Me.txtQuantidadeArmas.Size = New System.Drawing.Size(101, 27)
         Me.txtQuantidadeArmas.TabIndex = 28
         '
         'btnCraftArmas
         '
-        Me.btnCraftArmas.Location = New System.Drawing.Point(67, 132)
+        Me.btnCraftArmas.Location = New System.Drawing.Point(77, 176)
+        Me.btnCraftArmas.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btnCraftArmas.Name = "btnCraftArmas"
-        Me.btnCraftArmas.Size = New System.Drawing.Size(75, 23)
+        Me.btnCraftArmas.Size = New System.Drawing.Size(86, 31)
         Me.btnCraftArmas.TabIndex = 29
         Me.btnCraftArmas.Text = "Craftar"
         Me.btnCraftArmas.UseVisualStyleBackColor = True
@@ -107,178 +111,188 @@ Partial Class Craft_Armas
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(104, 174)
+        Me.Label2.Location = New System.Drawing.Point(119, 232)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(41, 15)
+        Me.Label2.Size = New System.Drawing.Size(53, 20)
         Me.Label2.TabIndex = 30
         Me.Label2.Text = "Label2"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(23, 171)
+        Me.TextBox1.Location = New System.Drawing.Point(26, 228)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(75, 23)
+        Me.TextBox1.Size = New System.Drawing.Size(85, 27)
         Me.TextBox1.TabIndex = 40
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(23, 231)
+        Me.TextBox2.Location = New System.Drawing.Point(26, 308)
+        Me.TextBox2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(75, 23)
+        Me.TextBox2.Size = New System.Drawing.Size(85, 27)
         Me.TextBox2.TabIndex = 42
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(104, 234)
+        Me.Label3.Location = New System.Drawing.Point(119, 312)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(41, 15)
+        Me.Label3.Size = New System.Drawing.Size(53, 20)
         Me.Label3.TabIndex = 41
         Me.Label3.Text = "Label3"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(23, 201)
+        Me.TextBox3.Location = New System.Drawing.Point(26, 268)
+        Me.TextBox3.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(75, 23)
+        Me.TextBox3.Size = New System.Drawing.Size(85, 27)
         Me.TextBox3.TabIndex = 44
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(104, 204)
+        Me.Label4.Location = New System.Drawing.Point(119, 272)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(41, 15)
+        Me.Label4.Size = New System.Drawing.Size(53, 20)
         Me.Label4.TabIndex = 43
         Me.Label4.Text = "Label4"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'TextBox4
         '
-        Me.TextBox4.Location = New System.Drawing.Point(23, 261)
+        Me.TextBox4.Location = New System.Drawing.Point(26, 348)
+        Me.TextBox4.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(75, 23)
+        Me.TextBox4.Size = New System.Drawing.Size(85, 27)
         Me.TextBox4.TabIndex = 46
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(104, 264)
+        Me.Label5.Location = New System.Drawing.Point(119, 352)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(41, 15)
+        Me.Label5.Size = New System.Drawing.Size(53, 20)
         Me.Label5.TabIndex = 45
         Me.Label5.Text = "Label5"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'TextBox5
         '
-        Me.TextBox5.Location = New System.Drawing.Point(23, 321)
+        Me.TextBox5.Location = New System.Drawing.Point(26, 428)
+        Me.TextBox5.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(75, 23)
+        Me.TextBox5.Size = New System.Drawing.Size(85, 27)
         Me.TextBox5.TabIndex = 48
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(104, 324)
+        Me.Label6.Location = New System.Drawing.Point(119, 432)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(41, 15)
+        Me.Label6.Size = New System.Drawing.Size(53, 20)
         Me.Label6.TabIndex = 47
         Me.Label6.Text = "Label6"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'TextBox6
         '
-        Me.TextBox6.Location = New System.Drawing.Point(23, 381)
+        Me.TextBox6.Location = New System.Drawing.Point(26, 508)
+        Me.TextBox6.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(75, 23)
+        Me.TextBox6.Size = New System.Drawing.Size(85, 27)
         Me.TextBox6.TabIndex = 50
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(104, 384)
+        Me.Label7.Location = New System.Drawing.Point(119, 512)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(41, 15)
+        Me.Label7.Size = New System.Drawing.Size(53, 20)
         Me.Label7.TabIndex = 49
         Me.Label7.Text = "Label7"
         Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'TextBox7
         '
-        Me.TextBox7.Location = New System.Drawing.Point(23, 411)
+        Me.TextBox7.Location = New System.Drawing.Point(26, 548)
+        Me.TextBox7.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(75, 23)
+        Me.TextBox7.Size = New System.Drawing.Size(85, 27)
         Me.TextBox7.TabIndex = 52
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(104, 414)
+        Me.Label9.Location = New System.Drawing.Point(119, 552)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(41, 15)
+        Me.Label9.Size = New System.Drawing.Size(53, 20)
         Me.Label9.TabIndex = 51
         Me.Label9.Text = "Label9"
         Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'TextBox8
         '
-        Me.TextBox8.Location = New System.Drawing.Point(23, 441)
+        Me.TextBox8.Location = New System.Drawing.Point(26, 588)
+        Me.TextBox8.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(75, 23)
+        Me.TextBox8.Size = New System.Drawing.Size(85, 27)
         Me.TextBox8.TabIndex = 54
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(104, 444)
+        Me.Label10.Location = New System.Drawing.Point(119, 592)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(47, 15)
+        Me.Label10.Size = New System.Drawing.Size(61, 20)
         Me.Label10.TabIndex = 53
         Me.Label10.Text = "Label10"
         Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'TextBox9
         '
-        Me.TextBox9.Location = New System.Drawing.Point(23, 291)
+        Me.TextBox9.Location = New System.Drawing.Point(26, 388)
+        Me.TextBox9.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(75, 23)
+        Me.TextBox9.Size = New System.Drawing.Size(85, 27)
         Me.TextBox9.TabIndex = 56
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(104, 294)
+        Me.Label11.Location = New System.Drawing.Point(119, 392)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(47, 15)
+        Me.Label11.Size = New System.Drawing.Size(61, 20)
         Me.Label11.TabIndex = 55
         Me.Label11.Text = "Label11"
         Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'TextBox10
         '
-        Me.TextBox10.Location = New System.Drawing.Point(23, 351)
+        Me.TextBox10.Location = New System.Drawing.Point(26, 468)
+        Me.TextBox10.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.Size = New System.Drawing.Size(75, 23)
+        Me.TextBox10.Size = New System.Drawing.Size(85, 27)
         Me.TextBox10.TabIndex = 58
         '
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(104, 354)
+        Me.Label12.Location = New System.Drawing.Point(119, 472)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(47, 15)
+        Me.Label12.Size = New System.Drawing.Size(61, 20)
         Me.Label12.TabIndex = 57
         Me.Label12.Text = "Label12"
         Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Craft_Armas
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(579, 666)
+        Me.ClientSize = New System.Drawing.Size(662, 713)
         Me.Controls.Add(Me.TextBox10)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.TextBox9)
@@ -307,6 +321,7 @@ Partial Class Craft_Armas
         Me.Controls.Add(Me.SeletorMenu)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.MaximizeBox = False
         Me.Name = "Craft_Armas"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

@@ -1,4 +1,7 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.Runtime.InteropServices
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement
+Imports System.Windows.Input
+Imports MySql.Data.MySqlClient
 
 Public Class Administração
 
@@ -19,6 +22,7 @@ Public Class Administração
             Dim queryPolvora As String = "SELECT SUM(Polvora) FROM Logs"
             Dim queryBorracha As String = "SELECT SUM(Borracha) FROM Logs"
             Dim queryParafusos As String = "SELECT SUM(Parafusos) FROM Logs"
+            Dim querySafiras As String = "SELECT SUM(Safiras) FROM Logs"
 
             connection.Open()
 
@@ -113,13 +117,53 @@ Public Class Administração
 
             End Using
 
+            Using Command As New MySqlCommand(querySafiras, connection)
+
+                Dim resultado As Integer = Convert.ToInt32(Command.ExecuteScalar())
+                txtSafiras.Text = resultado
+
+            End Using
+
+        End Using
+
+    End Sub
+
+    Private Sub Trabalhadores()
+
+        Using Connection As New MySqlConnection(connString)
+            Connection.Open()
+            Try
+
+                Dim query As String = "SELECT Username FROM Login"
+                Dim command As New MySqlCommand(query, Connection)
+                Dim reader As MySqlDataReader = command.ExecuteReader()
+
+                While reader.Read()
+
+                    selectorTrabalhador.Items.Add(reader.GetString("Username"))
+
+                End While
+
+                reader.Close()
+
+            Catch ex As Exception
+                MessageBox.Show("Error: " & ex.Message)
+
+            End Try
+
+            Dim items As String() = selectorTrabalhador.Items.Cast(Of String)().ToArray()
+            Array.Sort(items)
+            selectorTrabalhador.Items.Clear()
+            selectorTrabalhador.Items.AddRange(items)
+
         End Using
 
     End Sub
 
     Private Sub Administração_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         AtualizarQuantidades()
-        txtPedra.Enabled = False : txtAreia.Enabled = False : txtCarvão.Enabled = False : txtMinério.Enabled = False : txtNiquel.Enabled = False : txtEnxofre.Enabled = False : txtFerro.Enabled = False : txtPrata.Enabled = False : txtCobre.Enabled = False : txtVidro.Enabled = False : txtPolvora.Enabled = False : txtBorracha.Enabled = False : txtParafusos.Enabled = False
+        Trabalhadores()
+        txtPedra.Enabled = False : txtAreia.Enabled = False : txtCarvão.Enabled = False : txtMinério.Enabled = False : txtNiquel.Enabled = False : txtEnxofre.Enabled = False : txtFerro.Enabled = False : txtPrata.Enabled = False : txtCobre.Enabled = False : txtVidro.Enabled = False : txtPolvora.Enabled = False : txtBorracha.Enabled = False : txtParafusos.Enabled = False : txtSafiras.Enabled = False
     End Sub
 
     Private Sub btnAtualizar_Click(sender As Object, e As EventArgs) Handles btnAtualizar.Click
@@ -147,4 +191,56 @@ Public Class Administração
 
     End Sub
 
+    Private Sub ObterMontantePagamento()
+
+        Using connection As New MySqlConnection(connString)
+            connection.Open()
+            Dim quary As String = "SELECT Pagamento FROM Pagamentos WHERE Trabalhador = @Nome"
+            Dim Trabalhador As String = selectorTrabalhador.SelectedItem.ToString()
+
+            Using Command As New MySqlCommand(quary, connection)
+
+                Command.Parameters.AddWithValue("@Nome", Trabalhador)
+
+                Dim reader As MySqlDataReader = Command.ExecuteReader()
+
+                Dim soma As Double = 0
+
+                While reader.Read()
+                    soma += CDbl(reader("Pagamento"))
+                End While
+
+                Dim Montante As Double = soma
+
+                txtPagamento.Text = Montante
+            End Using
+        End Using
+
+    End Sub
+    Private Sub selectorTrabalhador_SelectedIndexChanged(sender As Object, e As EventArgs) Handles selectorTrabalhador.SelectedIndexChanged
+        ObterMontantePagamento()
+    End Sub
+    Private Sub btnPago_Click(sender As Object, e As EventArgs) Handles btnPago.Click
+
+        Dim Trabalhador As String = selectorTrabalhador.SelectedItem.ToString()
+        Dim Montante As String = txtPagamento.Text
+        Dim data As String = DateAndTime.Now
+
+        Using connection As New MySqlConnection(connString)
+            connection.Open()
+            Dim query As String = "INSERT INTO `Pagamentos` (`Trabalhador`, `Pagamento`, `Data`) VALUES (@value1,@value2,@value3)"
+
+            Using command As New MySqlCommand(query, connection)
+
+                command.Parameters.AddWithValue("@value1", Trabalhador)
+                command.Parameters.AddWithValue("@value2", -Montante)
+                command.Parameters.AddWithValue("@value3", data)
+
+                command.ExecuteNonQuery()
+
+            End Using
+
+        End Using
+        ObterMontantePagamento()
+    End Sub
 End Class

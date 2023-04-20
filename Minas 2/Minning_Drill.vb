@@ -54,11 +54,15 @@ Public Class Minning_Drill
 
         If checkComprar.Checked = True Then
 
+            btnVender.Enabled = False
             txtComprar.Enabled = True
+            btnComprar.Enabled = True
 
         Else
 
+            btnVender.Enabled = True
             txtComprar.Enabled = False
+            btnComprar.Enabled = False
 
         End If
 
@@ -135,6 +139,12 @@ Public Class Minning_Drill
             btnVender.Enabled = True
         End If
 
+        If checkComprar.Checked = True Then
+            btnVender.Enabled = False
+        Else
+            btnVender.Enabled = True
+        End If
+
     End Sub
 
     Private Sub btnVender_Click(sender As Object, e As EventArgs) Handles btnVender.Click
@@ -189,9 +199,9 @@ Public Class Minning_Drill
 
         If checkEquipa.Checked = True Then
 
-            If Quantidade > 4 Then
+            If Quantidade > 8 Then
 
-                MessageBox.Show("Só podes aceitar no máximo 4 Drill's")
+                MessageBox.Show("Só podes aceitar no máximo 8 Drill's")
                 txtQuantidadeUsada.Text = ""
                 Exit Sub
 
@@ -199,9 +209,9 @@ Public Class Minning_Drill
 
         Else
 
-            If Quantidade > 6 Then
+            If Quantidade > 10 Then
 
-                MessageBox.Show("Só podes aceitar no máximo 6 Drill's")
+                MessageBox.Show("Só podes aceitar no máximo 10 Drill's")
                 txtQuantidadeUsada.Text = ""
                 Exit Sub
 
@@ -218,15 +228,14 @@ Public Class Minning_Drill
 
     Private Sub btnComprar_Click(sender As Object, e As EventArgs) Handles btnComprar.Click
 
-        If checkComprar.Checked = False Then
-            Exit Sub
-        End If
-
         Using connection As New MySqlConnection(connString)
             connection.Open()
             Dim query As String = "INSERT INTO `Minning Drill` (`Trabalhador`, `Data`, `Drill's Compradas`, `Pagamento`) VALUES (@value1,@value2,@value3,@value4)"
+            Dim quaryPagamentos As String = "INSERT INTO `Pagamentos` (`Trabalhador`, `Pagamento`, `Data`) VALUES (@value1,@value2,@value3)"
+            Dim Data As String = DateAndTime.Now
 
             Using Command As New MySqlCommand(query, connection)
+                Dim commandPagamentos As New MySqlCommand(quaryPagamentos, connection)
 
                 Command.Parameters.AddWithValue("@value1", outputTrabalhador)
                 Command.Parameters.AddWithValue("@value2", DateAndTime.DateString)
@@ -234,6 +243,12 @@ Public Class Minning_Drill
                 Command.Parameters.AddWithValue("@value4", Pagar)
 
                 Command.ExecuteNonQuery()
+
+                commandPagamentos.Parameters.AddWithValue("@value1", MVariables.outputTrabalhador)
+                commandPagamentos.Parameters.AddWithValue("@value2", Pagar)
+                commandPagamentos.Parameters.AddWithValue("@value3", Data)
+
+                commandPagamentos.ExecuteNonQuery()
 
             End Using
 
