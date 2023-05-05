@@ -36,25 +36,6 @@ Public Class Processo_Legal
 
             End Try
 
-            Try
-
-                Dim query2 As String = "SELECT Equipas FROM Parcerias"
-                Dim command2 As New MySqlCommand(query2, Connection)
-                Dim reader2 As MySqlDataReader = command2.ExecuteReader()
-
-                While reader2.Read()
-
-                    SeletorEquipas.Items.Add(reader2.GetString("Equipas"))
-
-                End While
-
-                reader2.Close()
-
-            Catch ex As Exception
-                MessageBox.Show("Error: " & ex.Message)
-
-            End Try
-
             'Colocação em ordem alfabética
 
             Dim items As String() = SeletorEquipas.Items.Cast(Of String)().ToArray()
