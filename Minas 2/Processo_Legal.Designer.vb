@@ -357,7 +357,7 @@ Partial Class Processo_Legal
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(71, 15)
         Me.Label9.TabIndex = 33
-        Me.Label9.Text = "Versão: 1.0.6"
+        Me.Label9.Text = "Versão: 1.0.7"
         '
         'Label10
         '

@@ -67,10 +67,10 @@ Public Class Processo_Pedra
                 formD.Show()
                 Me.Hide()
 
-                ' Case "Craft de Armas e Acessorios"
-                '    Dim formE As New Craft_Armas()
-                '   formE.Show()
-                '  Me.Hide()
+            Case "Craft de Armas e Acessorios"
+                Dim formE As New Craft_Armas()
+                formE.Show()
+                Me.Hide()
 
         End Select
 
@@ -86,6 +86,8 @@ Public Class Processo_Pedra
         Dim Cobre As String = txtCobre.Text
         Dim Vidro As String = txtVidro.Text
         Dim Data As String = DateAndTime.Now
+
+        'Condições para deixar textboxs em branco
 
         If String.IsNullOrEmpty(txtPedra.Text) Then
             Pedra = 0
@@ -111,6 +113,8 @@ Public Class Processo_Pedra
             Vidro = 0
         End If
 
+        'Condição para introduzir apenas numeros
+
         If IsNumeric(Pedra) = False Or IsNumeric(Areia) = False Or IsNumeric(Ferro) = False Or IsNumeric(Prata) = False Or IsNumeric(Cobre) = False Or IsNumeric(Vidro) = False Then
             MessageBox.Show("Introduzir só números")
             txtAreia.Text = ""
@@ -121,6 +125,8 @@ Public Class Processo_Pedra
             txtVidro.Text = ""
             Exit Sub
         End If
+
+        'Registos de processo e de logs
 
         Using connection As New MySqlConnection(connString)
             connection.Open()
@@ -169,9 +175,32 @@ Public Class Processo_Pedra
 
             End Using
 
-
         End Using
 
+        'Calculo de Salário
+
+        Dim Salário As Integer
+        Dim ValorPedra, ValorAreia As Double
+
+        ValorPedra = 9 + (5 * Rnd())
+        ValorAreia = 5 + (3 * Rnd())
+        Salário = (Pedra * ValorPedra) + (Areia * ValorAreia)
+
+        'Registo do Salário na tabela de pagamentos
+
+        Using connection As New MySqlConnection(connString)
+            connection.Open()
+            Dim quarySalários As String = "INSERT INTO `Pagamentos` (`Trabalhador`, `Pagamento`, `Data`) VALUES (@value1,@value2,@value3)"
+            Using command As New MySqlCommand(quarySalários, connection)
+
+                command.Parameters.AddWithValue("@value1", MVariables.outputTrabalhador)
+                command.Parameters.AddWithValue("@value2", Salário)
+                command.Parameters.AddWithValue("@value3", Data)
+
+                command.ExecuteNonQuery()
+
+            End Using
+        End Using
         'Reset da app
 
         txtAreia.Text = ""
@@ -181,8 +210,6 @@ Public Class Processo_Pedra
         txtPrata.Text = ""
         txtVidro.Text = ""
         MessageBox.Show("Operação registada")
-
-
 
     End Sub
 

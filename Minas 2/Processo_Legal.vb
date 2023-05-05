@@ -1,4 +1,5 @@
 ﻿
+Imports System.DirectoryServices.ActiveDirectory
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Imports MySql.Data.MySqlClient
 
@@ -6,7 +7,8 @@ Public Class Processo_Legal
 
     'Definição das variaveis para todos os Private Subs
 
-    Private outputDinheiro, outputCobre, outputFerro, outputPrata, outputVidro, outputNíquel, outputEnxofre As Integer
+    Private outputDinheiro, outputCobre, outputFerro, outputPrata, outputVidro, outputNíquel, outputEnxofre, Salário As Integer
+    Private Percentagem As Double
     Private inputPedra, inputAreia, inputMinério As String
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -198,31 +200,15 @@ Public Class Processo_Legal
             outputDinheiro = parcelaFerro * 185 + parcelaCobre * 235 + parcelaPrata * 135 + parcelaVidro * 110 - ((inputPedra * 80) + (inputAreia * 15))
         End If
 
-        If SeletorEquipas.SelectedItem = "Sumiyoshi" Then
+        'Parcerias
+
+        If SeletorEquipas.SelectedItem = "Sumiyoshi" Or SeletorEquipas.SelectedItem = "Yamaha" Then
             outputDinheiro = parcelaFerro * 155 + parcelaCobre * 205 + parcelaPrata * 105 + parcelaVidro * 80 - ((inputPedra * 80) + (inputAreia * 15))
         End If
 
-        Using connection As New MySqlConnection(connString)
-            connection.Open()
-            Try 'Parcerias (Pagam 0)
-
-                Dim query As String = "SELECT COUNT(*) FROM Parcerias WHERE Equipas = @equipa"
-                Dim command As New MySqlCommand(query, connection)
-                command.Parameters.AddWithValue("@equipa", SeletorEquipas.Text)
-
-                Dim count As Integer = 0
-                Dim result = command.ExecuteScalar()
-                If result IsNot Nothing AndAlso Not IsDBNull(result) Then
-                    count = Convert.ToInt32(result)
-                End If
-
-                If count > 0 Then
-                    outputDinheiro = 0
-                End If
-            Catch ex As Exception
-                MessageBox.Show("Error: " & ex.Message)
-            End Try
-        End Using
+        If SeletorEquipas.SelectedItem = "The Garrison" Or SeletorEquipas.SelectedItem = "AIMF" Then
+            outputDinheiro = 0
+        End If
 
         'Cor do display do dinheiro
 
@@ -254,8 +240,19 @@ Public Class Processo_Legal
         txtDinheiro.Text = Math.Abs(outputDinheiro)
 
     End Sub
+    Private Sub CalcularSalário()
 
+        If SeletorEquipas.SelectedItem = "Minas" Then
+            Percentagem = 0.2 + (0.2 * Rnd())
+            Salário = Math.Abs(outputDinheiro) * Percentagem
+        Else
+            Percentagem = 0.3 + (0.1 * Rnd())
+            Salário = Math.Abs(outputDinheiro) * Percentagem
+        End If
+
+    End Sub
     Private Sub btnGravar_Click(sender As Object, e As EventArgs) Handles btnGravar.Click
+        CalcularSalário()
 
         'Condição para ser obrigatorio defenir o cliente e equipa
 
@@ -291,7 +288,7 @@ Public Class Processo_Legal
 
         Dim inputCliente As String = txtCliente.Text
         Dim inputEquipa As String = SeletorEquipas.SelectedItem.ToString()
-        Dim outputPagamento As Integer
+        Dim outputPagamento As Integer = Math.Abs(outputDinheiro)
         Dim data As String = DateAndTime.Now
         Dim Telemovel As String = txtTelemovel.Text
 
@@ -302,7 +299,9 @@ Public Class Processo_Legal
         Dim quaryLogsContentor As String = "INSERT INTO `Logs` (`Pedra`, `Areia`, `Trabalhador`, `Minério`, `Níquel`, `Enxofre`, `Stash`, `Data`) VALUES (@value1,@value2,@value3,@value4,@value5,@value6,@value7,@value8)"
         Dim quaryLogsRoloute As String = "INSERT INTO `Logs` (`Trabalhador`, `Ferro`, `Prata`, `Cobre`, `Vidro`, `Stash`, `Data`) VALUES (@value1,@value2,@value3,@value4,@value5,@value6,@value7)"
         Dim quaryPagamentos As String = "INSERT INTO `Pagamentos` (`Trabalhador`, `Pagamento`, `Data`) VALUES (@value1,@value2,@value3)"
-        'Registo dos valores na tabela de Processo Legal
+        Dim quarySalários As String = "INSERT INTO `Pagamentos` (`Trabalhador`, `Pagamento`, `Data`) VALUES (@value1,@value2,@value3)"
+
+        'Registo dos valores na tabela de Venda de Materiais
 
         Using connection As New MySqlConnection(connString)
             connection.Open()
@@ -370,7 +369,6 @@ Public Class Processo_Legal
                 If outputDinheiro >= 0 Then
                     command.Parameters.AddWithValue("@value10", 0)
                 Else
-                    outputPagamento = Math.Abs(outputDinheiro)
                     command.Parameters.AddWithValue("@value10", outputPagamento)
                 End If
 
@@ -411,7 +409,22 @@ Public Class Processo_Legal
                 commandPagamentos.Parameters.AddWithValue("@value2", outputPagamento)
                 commandPagamentos.Parameters.AddWithValue("@value3", data)
 
-                commandPagamentos.ExecuteNonQuery()
+                If outputDinheiro < 0 Then
+                    commandPagamentos.ExecuteNonQuery()
+                End If
+
+            End Using
+            'Registo do salário na tabela pagamentos 
+
+            Using command As New MySqlCommand(quarySalários, connection)
+
+                command.Parameters.AddWithValue("@value1", MVariables.outputTrabalhador)
+                command.Parameters.AddWithValue("@value2", Salário)
+                command.Parameters.AddWithValue("@value3", data)
+
+                If checkFerro.Checked = False AndAlso checkCobre.Checked = False AndAlso checkPrata.Checked = False AndAlso checkVidro.Checked = False Then
+                    command.ExecuteNonQuery()
+                End If
 
             End Using
 
@@ -468,10 +481,10 @@ Public Class Processo_Legal
                 formD.Show()
                 Me.Hide()
 
-                ' Case "Craft de Armas e Acessorios"
-                '    Dim formE As New Craft_Armas()
-                '   formE.Show()
-                '  Me.Hide()
+            Case "Craft de Armas e Acessorios"
+                Dim formE As New Craft_Armas()
+                formE.Show()
+                Me.Hide()
 
         End Select
 

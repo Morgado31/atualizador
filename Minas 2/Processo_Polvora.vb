@@ -116,11 +116,13 @@ Public Class Processo_Polvora
 
         quantidadeEntregar = Quantidade * 0.85
 
-        If seletorEquipas.SelectedItem.ToString() = "Sumiyoshi" Or seletorEquipas.SelectedItem.ToString() = "Yamaha" Or seletorEquipas.SelectedItem.ToString() = "Ronaldo" Or seletorEquipas.SelectedItem.ToString() = "The Garrison" Or seletorEquipas.SelectedItem.ToString() = "Peaky Blinder" Or seletorEquipas.SelectedItem.ToString() = "Penetra" Or seletorEquipas.SelectedItem.ToString() = "Forum Drive Famillies" Then
+        'Parcerias
+
+        If seletorEquipas.SelectedItem.ToString() = "Sumiyoshi" Or seletorEquipas.SelectedItem.ToString() = "Ronaldo" Or seletorEquipas.SelectedItem.ToString() = "The Garrison" Or seletorEquipas.SelectedItem.ToString() = "Penetra" Or seletorEquipas.SelectedItem.ToString() = "Forum Drive Famillies" Then
             quantidadeEntregar = Quantidade
         End If
 
-        If seletorEquipas.SelectedItem.ToString() = "Lacerda" Then
+        If seletorEquipas.SelectedItem.ToString() = "Lacerda" Or seletorEquipas.SelectedItem.ToString() = "Yamaha" Then
             quantidadeEntregar = Quantidade * 0.95
         End If
 
@@ -156,10 +158,10 @@ Public Class Processo_Polvora
                 formD.Show()
                 Me.Hide()
 
-                ' Case "Craft de Armas e Acessorios"
-                '    Dim formE As New Craft_Armas()
-                '   formE.Show()
-                '  Me.Hide()
+            Case "Craft de Armas e Acessorios"
+                Dim formE As New Craft_Armas()
+                formE.Show()
+                Me.Hide()
 
         End Select
 

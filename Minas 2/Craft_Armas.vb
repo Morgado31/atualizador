@@ -2,6 +2,8 @@
 Imports MySql.Data.MySqlClient
 
 Public Class Craft_Armas
+    Public Aluminio, Aço, Pedaços, Borracha, Bronze, Polimero, Molas, Parafusos, ABS, BPPistol, BPSMG, BPRifle As Integer
+
     Private Sub Craft_Armas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         'Introduzir menus no seletor de menus
@@ -81,69 +83,69 @@ Public Class Craft_Armas
 
     Private Sub btnCraftArmas_Click(sender As Object, e As EventArgs) Handles btnCraftArmas.Click
 
-        Dim QuantidadeArmas As String = txtQuantidadeArmas.Text : Dim Aluminio As Integer : Dim Aço As Integer : Dim Pedaços As Integer : Dim Borracha As Integer : Dim Bronze As Integer : Dim Polimero As Integer : Dim Molas As Integer : Dim Parafusos As Integer : Dim ABS As Integer : Dim BluePrints As Integer : Dim TipoBluePrints As String
-
-        If seletorArma.SelectedItem.ToString = "Vintage" Then
-            Aluminio = 14 : Pedaços = 35 : Borracha = 10 : Molas = 2 : Parafusos = 4 : ABS = 14 : BluePrints = 20 : TipoBluePrints = "Pistola"
-        End If
+        Dim QuantidadeArmas As Integer = txtQuantidadeArmas.Text
 
         If seletorArma.SelectedItem.ToString = "Fajuta" Then
-            Aluminio = 20 : Pedaços = 40 : Borracha = 15 : Molas = 5 : Parafusos = 7 : ABS = 20 : BluePrints = 20 : TipoBluePrints = "Pistola"
+            ABS = ABS + 20 * QuantidadeArmas : Aluminio = Aluminio + 20 * QuantidadeArmas : Borracha = Borracha + 15 * QuantidadeArmas : Molas = Molas + 5 * QuantidadeArmas : Parafusos = Parafusos + 7 * QuantidadeArmas : Pedaços = Pedaços + 40 * QuantidadeArmas : BPPistol = BPPistol + 20 * QuantidadeArmas
+        End If
+
+        If seletorArma.SelectedItem.ToString = "Vintage" Then
+            ABS = ABS + 14 * QuantidadeArmas : Aluminio = Aluminio + 14 * QuantidadeArmas : Borracha = Borracha + 10 * QuantidadeArmas : Molas = Molas + 2 * QuantidadeArmas : Parafusos = Parafusos + 4 * QuantidadeArmas : Pedaços = Pedaços + 35 * QuantidadeArmas : BPPistol = BPPistol + 20 * QuantidadeArmas
         End If
 
         If seletorArma.SelectedItem.ToString = "Revolver" Then
-            Aluminio = 24 : Pedaços = 45 : Borracha = 20 : Molas = 6 : Parafusos = 8 : ABS = 24 : BluePrints = 25 : TipoBluePrints = "Pistola"
+            ABS = ABS + 24 * QuantidadeArmas : Aluminio = Aluminio + 24 * QuantidadeArmas : Borracha = Borracha + 20 * QuantidadeArmas : Molas = Molas + 6 * QuantidadeArmas : Parafusos = Parafusos + 8 * QuantidadeArmas : Pedaços = Pedaços + 45 * QuantidadeArmas : BPPistol = BPPistol + 25 * QuantidadeArmas
         End If
 
         If seletorArma.SelectedItem.ToString = "Tec-9" Then
-            Aluminio = 30 : Pedaços = 50 : Borracha = 25 : Molas = 7 : Parafusos = 10 : ABS = 30 : BluePrints = 25 : TipoBluePrints = "Pistola"
+            ABS = ABS + 30 * QuantidadeArmas : Aluminio = Aluminio + 30 * QuantidadeArmas : Borracha = Borracha + 25 * QuantidadeArmas : Molas = Molas + 7 * QuantidadeArmas : Parafusos = Parafusos + 10 * QuantidadeArmas : Pedaços = Pedaços + 50 * QuantidadeArmas : BPSMG = BPSMG + 25 * QuantidadeArmas
         End If
 
-        If seletorArma.SelectedItem.ToString = "Micro Uzi" Then
-            Aço = 100 : Bronze = 50 : Polimero = 45 : Molas = 7 : Parafusos = 10 : BluePrints = 30 : TipoBluePrints = "SMG"
+        If seletorArma.SelectedItem.ToString() = "Deagle" Then
+            ABS = ABS + 35 * QuantidadeArmas : Aluminio = Aluminio + 35 * QuantidadeArmas : Borracha = Borracha + 30 * QuantidadeArmas : Molas = Molas + 7 * QuantidadeArmas : Parafusos = Parafusos + 10 * QuantidadeArmas : Pedaços = Pedaços + 55 * QuantidadeArmas : BPPistol = BPPistol + 30 * QuantidadeArmas
         End If
 
+        If seletorArma.SelectedItem.ToString = "Double Barrel" Then
+            ABS = ABS + 24 * QuantidadeArmas : Aluminio = Aluminio + 18 * QuantidadeArmas : Borracha = Borracha + 25 * QuantidadeArmas : Molas = Molas + 6 * QuantidadeArmas : Parafusos = Parafusos + 9 * QuantidadeArmas : Pedaços = Pedaços + 51 * QuantidadeArmas : BPPistol = BPPistol + 25 * QuantidadeArmas
+        End If
 
+        If seletorArma.SelectedItem.ToString = "Micro" Then
+            Aço = Aço + 100 * QuantidadeArmas : Bronze = Bronze + 50 * QuantidadeArmas : Molas = Molas + 7 * QuantidadeArmas : Parafusos = Parafusos + 10 * QuantidadeArmas : Polimero = Polimero + 45 * QuantidadeArmas : BPSMG = BPSMG + 30 * QuantidadeArmas
+        End If
 
+        If seletorArma.SelectedItem.ToString = "Thompson" Then
+            Aço = Aço + 110 * QuantidadeArmas : Bronze = Bronze + 60 * QuantidadeArmas : Molas = Molas + 7 * QuantidadeArmas : Parafusos = Parafusos + 10 * QuantidadeArmas : Polimero = Polimero + 60 * QuantidadeArmas
+        End If
+
+        If seletorArma.SelectedItem.ToString = "Draco" Then
+            Aço = Aço + 120 * QuantidadeArmas : Aluminio = Aluminio + 22 * QuantidadeArmas : Borracha = Borracha + 30 * QuantidadeArmas : Bronze = Bronze + 75 * QuantidadeArmas : Molas = Molas + 17 * QuantidadeArmas : Parafusos = Parafusos + 10 * QuantidadeArmas : Polimero = Polimero + 110 * QuantidadeArmas : BPRifle = BPRifle + 45 * QuantidadeArmas
+        End If
+
+        If seletorArma.SelectedItem.ToString = "PDW" Then
+            Aço = Aço + 120 * QuantidadeArmas : Bronze = Bronze + 70 * QuantidadeArmas : Molas = Molas + 7 * QuantidadeArmas : Parafusos = Parafusos + 10 * QuantidadeArmas : Polimero = Polimero + 70 * QuantidadeArmas : BPSMG = BPSMG + 40 * QuantidadeArmas
+        End If
+
+        If seletorArma.SelectedItem.ToString = "AK" Then
+            Aço = Aço + 140 * QuantidadeArmas : Aluminio = Aluminio + 24 * QuantidadeArmas : Borracha = Borracha + 35 * QuantidadeArmas : Bronze = Bronze + 95 * QuantidadeArmas : Molas = Molas + 20 * QuantidadeArmas : Parafusos = Parafusos + 10 * QuantidadeArmas : Polimero = Polimero + 130 * QuantidadeArmas : BPRifle = BPRifle + 55 * QuantidadeArmas
+        End If
+
+        If seletorArma.SelectedItem.ToString = "Famas" Then
+            Aço = Aço + 150 * QuantidadeArmas : Aluminio = Aluminio + 30 * QuantidadeArmas : Bronze = Bronze + 100 * QuantidadeArmas : Molas = Molas + 22 * QuantidadeArmas : Parafusos = Parafusos + 12 * QuantidadeArmas : Polimero = Polimero + 140 * QuantidadeArmas : BPRifle = BPRifle + 65 * QuantidadeArmas
+        End If
+
+        lblEncomenda.Text = lblEncomenda.Text & vbCrLf & QuantidadeArmas & "x " & seletorArma.SelectedItem.ToString()
+
+        Mostrador()
+        seletorArma.SelectedIndex = -1 : txtQuantidadeArmas.Text = ""
+    End Sub
+    Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
+        Aluminio = 0 : Aço = 0 : Pedaços = 0 : Borracha = 0 : Bronze = 0 : Polimero = 0 : Molas = 0 : Parafusos = 0 : ABS = 0 : BPPistol = 0 : BPSMG = 0 : BPRifle = 0
+        lblEncomenda.Text = "Encomenda:"
+        Mostrador()
     End Sub
 
-    Private Sub Label10_Click(sender As Object, e As EventArgs) 
-
+    Private Sub Mostrador()
+        txtAluminio.Text = Aluminio : txtBronze.Text = Bronze : txtAço.Text = Aço : txtPMetal.Text = Pedaços : txtBorracha.Text = Borracha : txtBronze.Text = Bronze : txtPolimero.Text = Polimero : txtMolas.Text = Molas : txtParafusos.Text = Parafusos : txtABS.Text = ABS : txtbpPistol.Text = BPPistol : txtBPSMG.Text = BPSMG : txtBPRifle.Text = BPRifle
     End Sub
 
-    Private Sub Label9_Click(sender As Object, e As EventArgs) 
-
-    End Sub
-
-    Private Sub Label7_Click(sender As Object, e As EventArgs) 
-
-    End Sub
-
-    Private Sub Label6_Click(sender As Object, e As EventArgs) 
-
-    End Sub
-
-    Private Sub Label5_Click(sender As Object, e As EventArgs) 
-
-    End Sub
-
-    Private Sub Label4_Click(sender As Object, e As EventArgs) 
-
-    End Sub
-
-    Private Sub Label3_Click(sender As Object, e As EventArgs) 
-
-    End Sub
-
-    Private Sub Label12_Click(sender As Object, e As EventArgs) 
-
-    End Sub
-
-    Private Sub Label11_Click(sender As Object, e As EventArgs) 
-
-    End Sub
-
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
-
-    End Sub
 End Class
