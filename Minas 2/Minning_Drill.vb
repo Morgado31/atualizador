@@ -248,7 +248,7 @@ Public Class Minning_Drill
                 commandPagamentos.Parameters.AddWithValue("@value2", Pagar)
                 commandPagamentos.Parameters.AddWithValue("@value3", Data)
 
-                commandPagamentos.ExecuteNonQuery()
+                'commandPagamentos.ExecuteNonQuery()
 
             End Using
 
