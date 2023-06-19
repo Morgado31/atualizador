@@ -473,12 +473,10 @@ Public Class Processo_Legal
 
     Private Sub btnRetirar_Click(sender As Object, e As EventArgs) Handles btnRetirar.Click
 
-        Dim Materias As String = seletorMaterial.SelectedItem.ToString
-        Dim quantidade As String = txtQuantidade.Text
-        Dim data As String = DateAndTime.Now
-
         Using connection As New MySqlConnection(connString)
-
+            Dim Materias As String = seletorMaterial.SelectedItem.ToString
+            Dim quantidade As String = txtQuantidade.Text
+            Dim data As String = DateAndTime.Now
             Dim query As String = "INSERT INTO `Logs` (`Trabalhador`, `" & Materias & "`, `Stash`, `Data`) VALUES (@value1,@value2,@value3,@value4)"
 
             Using command As New MySqlCommand(query, connection)
@@ -493,7 +491,7 @@ Public Class Processo_Legal
                     command.Parameters.AddWithValue("@value3", "Roloute")
                 End If
 
-                command.Parameters.AddWithValue("@value4", data)
+                command.Parameters.AddWithValue("@value4", Data)
 
                 command.ExecuteNonQuery()
             End Using
@@ -507,12 +505,10 @@ Public Class Processo_Legal
 
     Private Sub btnAdicionar_Click(sender As Object, e As EventArgs) Handles btnAdicionar.Click
 
-        Dim Materias As String = seletorMaterial.SelectedItem.ToString
-        Dim quantidade As String = txtQuantidade.Text
-        Dim data As String = DateAndTime.Now
-
         Using connection As New MySqlConnection(connString)
-
+            Dim Materias As String = seletorMaterial.SelectedItem.ToString
+            Dim quantidade As String = txtQuantidade.Text
+            Dim data As String = DateAndTime.Now
             Dim query As String = "INSERT INTO `Logs` (`Trabalhador`, `" & Materias & "`, `Stash`, `Data`) VALUES (@value1,@value2,@value3,@value4)"
 
             Using command As New MySqlCommand(query, connection)
@@ -527,7 +523,7 @@ Public Class Processo_Legal
                     command.Parameters.AddWithValue("@value3", "Roloute")
                 End If
 
-                command.Parameters.AddWithValue("@value4", data)
+                command.Parameters.AddWithValue("@value4", Data)
 
                 command.ExecuteNonQuery()
             End Using

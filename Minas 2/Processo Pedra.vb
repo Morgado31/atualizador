@@ -78,58 +78,59 @@ Public Class Processo_Pedra
 
     Private Sub btnGravar_Click(sender As Object, e As EventArgs) Handles btnGravar.Click
 
-        Dim Pedra As String = txtPedra.Text
-        Dim Areia As String = txtAreia.Text
-        Dim Trabalhador As String = MVariables.outputTrabalhador
-        Dim Ferro As String = txtFerro.Text
-        Dim Prata As String = txtPrata.Text
-        Dim Cobre As String = txtCobre.Text
-        Dim Vidro As String = txtVidro.Text
-        Dim Data As String = DateAndTime.Now
-
-        'Condições para deixar textboxs em branco
-
-        If String.IsNullOrEmpty(txtPedra.Text) Then
-            Pedra = 0
-        End If
-
-        If String.IsNullOrEmpty(txtAreia.Text) Then
-            Areia = 0
-        End If
-
-        If String.IsNullOrEmpty(txtFerro.Text) Then
-            Ferro = 0
-        End If
-
-        If String.IsNullOrEmpty(txtCobre.Text) Then
-            Cobre = 0
-        End If
-
-        If String.IsNullOrEmpty(txtPrata.Text) Then
-            Prata = 0
-        End If
-
-        If String.IsNullOrEmpty(txtVidro.Text) Then
-            Vidro = 0
-        End If
-
-        'Condição para introduzir apenas numeros
-
-        If IsNumeric(Pedra) = False Or IsNumeric(Areia) = False Or IsNumeric(Ferro) = False Or IsNumeric(Prata) = False Or IsNumeric(Cobre) = False Or IsNumeric(Vidro) = False Then
-            MessageBox.Show("Introduzir só números")
-            txtAreia.Text = ""
-            txtPedra.Text = ""
-            txtFerro.Text = ""
-            txtPrata.Text = ""
-            txtCobre.Text = ""
-            txtVidro.Text = ""
-            Exit Sub
-        End If
-
         'Registos de processo e de logs
 
         Using connection As New MySqlConnection(connString)
             connection.Open()
+
+            Dim Pedra As String = txtPedra.Text
+            Dim Areia As String = txtAreia.Text
+            Dim Trabalhador As String = MVariables.outputTrabalhador
+            Dim Ferro As String = txtFerro.Text
+            Dim Prata As String = txtPrata.Text
+            Dim Cobre As String = txtCobre.Text
+            Dim Vidro As String = txtVidro.Text
+            Dim Data As String = DateAndTime.Now
+
+            'Condições para deixar textboxs em branco
+
+            If String.IsNullOrEmpty(txtPedra.Text) Then
+                Pedra = 0
+            End If
+
+            If String.IsNullOrEmpty(txtAreia.Text) Then
+                Areia = 0
+            End If
+
+            If String.IsNullOrEmpty(txtFerro.Text) Then
+                Ferro = 0
+            End If
+
+            If String.IsNullOrEmpty(txtCobre.Text) Then
+                Cobre = 0
+            End If
+
+            If String.IsNullOrEmpty(txtPrata.Text) Then
+                Prata = 0
+            End If
+
+            If String.IsNullOrEmpty(txtVidro.Text) Then
+                Vidro = 0
+            End If
+
+            'Condição para introduzir apenas numeros
+
+            If IsNumeric(Pedra) = False Or IsNumeric(Areia) = False Or IsNumeric(Ferro) = False Or IsNumeric(Prata) = False Or IsNumeric(Cobre) = False Or IsNumeric(Vidro) = False Then
+                MessageBox.Show("Introduzir só números")
+                txtAreia.Text = ""
+                txtPedra.Text = ""
+                txtFerro.Text = ""
+                txtPrata.Text = ""
+                txtCobre.Text = ""
+                txtVidro.Text = ""
+                Exit Sub
+            End If
+
 
             Dim query As String = "INSERT INTO `Processo Legal` (`Pedra`, `Areia`, `Trabalhador`, `Ferro`, `Prata`, `Cobre`, `Vidro`, `Data`) VALUES (@value1,@value2,@value3,@value4,@value5,@value6,@value7,@value8)"
             Dim quaryLogsContentor As String = "INSERT INTO `Logs` (`Pedra`, `Areia`, `Trabalhador`, `Stash`, `Data`) VALUES (@value1,@value2,@value3,@value4,@value5)"
@@ -175,21 +176,18 @@ Public Class Processo_Pedra
 
             End Using
 
-        End Using
+            'Calculo de Salário
 
-        'Calculo de Salário
+            Dim Salário As Integer
+            Dim ValorPedra, ValorAreia As Double
 
-        Dim Salário As Integer
-        Dim ValorPedra, ValorAreia As Double
+            ValorPedra = 9 + (5 * Rnd())
+            ValorAreia = 5 + (3 * Rnd())
+            Salário = (Pedra * ValorPedra) + (Areia * ValorAreia)
 
-        ValorPedra = 9 + (5 * Rnd())
-        ValorAreia = 5 + (3 * Rnd())
-        Salário = (Pedra * ValorPedra) + (Areia * ValorAreia)
+            'Registo do Salário na tabela de pagamentos
 
-        'Registo do Salário na tabela de pagamentos
 
-        Using connection As New MySqlConnection(connString)
-            connection.Open()
             Dim quarySalários As String = "INSERT INTO `Pagamentos` (`Trabalhador`, `Pagamento`, `Data`) VALUES (@value1,@value2,@value3)"
             Using command As New MySqlCommand(quarySalários, connection)
 
@@ -200,16 +198,17 @@ Public Class Processo_Pedra
                 command.ExecuteNonQuery()
 
             End Using
-        End Using
-        'Reset da app
+            'Reset da app
 
-        txtAreia.Text = ""
-        txtCobre.Text = ""
-        txtFerro.Text = ""
-        txtPedra.Text = ""
-        txtPrata.Text = ""
-        txtVidro.Text = ""
-        MessageBox.Show("Operação registada")
+            txtAreia.Text = ""
+            txtCobre.Text = ""
+            txtFerro.Text = ""
+            txtPedra.Text = ""
+            txtPrata.Text = ""
+            txtVidro.Text = ""
+            MessageBox.Show("Operação registada")
+
+        End Using
 
     End Sub
 
