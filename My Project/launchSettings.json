@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Minas Rino": {
+      "commandName": "Project",
+      "sqlDebugging": true
+    }
+  }
+}
